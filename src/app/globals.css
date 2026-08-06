@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-rouge: #e0000f;
+  --color-bleu: #000091;
+  --color-ink: #0e0e24;
+  --color-ink-soft: #1c1c3a;
+  --color-paper: #ffffff;
+  --color-mist: #f5f5f7;
+  --color-line: #e5e4e4;
+  --color-line-dark: #2c2c4a;
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-instrument);
+  --font-khmer: var(--font-noto-khmer);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display headings */
+.display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-rouge);
+}
+
+/* Signature: the tricolor hairline */
+.tricolore {
+  display: block;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--color-bleu) 0%,
+    var(--color-bleu) 33.33%,
+    var(--color-paper) 33.33%,
+    var(--color-paper) 66.66%,
+    var(--color-rouge) 66.66%,
+    var(--color-rouge) 100%
+  );
+}
+.tricolore--on-light {
+  background: linear-gradient(
+    to right,
+    var(--color-bleu) 0%,
+    var(--color-bleu) 33.33%,
+    var(--color-line) 33.33%,
+    var(--color-line) 66.66%,
+    var(--color-rouge) 66.66%,
+    var(--color-rouge) 100%
+  );
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Marquee for the Khmer script band */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--color-rouge);
+  color: var(--color-paper);
 }
