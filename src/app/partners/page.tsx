@@ -52,7 +52,7 @@ export default function PartnersPage() {
                       <h3 className="display text-lg text-ink">{s.name}</h3>
                     )}
                     {s.description && (
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft/80">
+                      <p className="mt-3 flex-1 text-base leading-relaxed text-ink-soft/80">
                         {s.description}
                       </p>
                     )}
@@ -91,7 +91,7 @@ export default function PartnersPage() {
               <Reveal key={p.title} delay={i * 80}>
                 <div className="h-full bg-ink p-8">
                   <h3 className="display text-lg text-white">{p.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  <p className="mt-3 text-base leading-relaxed text-white/60">
                     {p.description}
                   </p>
                 </div>

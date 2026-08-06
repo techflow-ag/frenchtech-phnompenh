@@ -25,7 +25,7 @@ export function SectionHeading({
       </h2>
       {intro && (
         <p
-          className={`mt-5 max-w-2xl text-base leading-relaxed md:text-lg ${
+          className={`mt-5 max-w-2xl text-lg leading-relaxed md:text-xl ${
             dark ? "text-white/70" : "text-ink-soft/80"
           } ${align === "center" ? "mx-auto" : ""}`}
         >

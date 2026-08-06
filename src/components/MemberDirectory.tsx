@@ -109,7 +109,7 @@ export function MemberDirectory() {
                   <p className="text-xs text-rouge">{m.sector}</p>
                 </div>
               </div>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-soft/80">
+              <p className="mt-4 flex-1 text-base leading-relaxed text-ink-soft/80">
                 {m.description}
               </p>
               {m.website && (

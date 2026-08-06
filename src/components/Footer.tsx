@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Logo } from "./Logo";
-import { LinkedinIcon, FacebookIcon, InstagramIcon } from "./SocialIcons";
+import { LinkedinIcon, FacebookIcon } from "./SocialIcons";
 
 const columns = [
   {
@@ -31,7 +31,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
           <Logo dark />
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/70">
+          <p className="mt-6 max-w-sm text-base leading-relaxed text-white/70">
             The official French Tech Community in Cambodia — part of a global
             network of 100+ communities in 57 countries, driven by volunteers
             and labeled by the French Tech Mission.
@@ -47,21 +47,16 @@ export function Footer() {
               <LinkedinIcon className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/CambodgeFrenchTech/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               className="text-white/60 transition-colors hover:text-rouge"
             >
               <FacebookIcon className="h-5 w-5" />
             </a>
             <a
-              href="#"
-              aria-label="Instagram"
-              className="text-white/60 transition-colors hover:text-rouge"
-            >
-              <InstagramIcon className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:contact@frenchtech-phnompenh.com"
+              href="mailto:frenchtech.pp@gmail.com"
               aria-label="Email"
               className="text-white/60 transition-colors hover:text-rouge"
             >
@@ -77,7 +72,7 @@ export function Footer() {
                 <li key={l.href + l.label}>
                   <Link
                     href={l.href}
-                    className="text-sm text-white/70 transition-colors hover:text-white"
+                    className="text-base text-white/70 transition-colors hover:text-white"
                   >
                     {l.label}
                   </Link>

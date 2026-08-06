@@ -76,13 +76,30 @@ export default function AboutPage() {
             <Reveal key={t.year} delay={i * 80}>
               <div className="h-full bg-paper p-6">
                 <p className="display text-3xl text-rouge">{t.year}</p>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft/80">
+                <p className="mt-3 text-base leading-relaxed text-ink-soft/80">
                   {t.text}
                 </p>
               </div>
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Team photo */}
+      <section className="mx-auto max-w-6xl px-5 pb-20 md:pb-28">
+        <Reveal>
+          <figure className="relative overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/team/team-1.jpg"
+              alt="The French Tech Phnom Penh community team"
+              className="aspect-[21/9] w-full object-cover"
+            />
+            <figcaption className="absolute bottom-0 left-0 bg-ink/85 px-5 py-3 text-sm text-white">
+              The community, Phnom Penh — 2026
+            </figcaption>
+          </figure>
+        </Reveal>
       </section>
 
       {/* Values */}
@@ -94,7 +111,7 @@ export default function AboutPage() {
               <Reveal key={v.title} delay={i * 100}>
                 <div className="border-t-2 border-bleu pt-5">
                   <h3 className="display text-xl text-ink">{v.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft/80">
+                  <p className="mt-3 text-base leading-relaxed text-ink-soft/80">
                     {v.copy}
                   </p>
                 </div>
@@ -119,7 +136,7 @@ export default function AboutPage() {
                   <span className="display shrink-0 text-lg text-rouge">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-sm leading-relaxed text-white/80">{m}</p>
+                  <p className="text-base leading-relaxed text-white/80">{m}</p>
                 </li>
               </Reveal>
             ))}
@@ -137,6 +154,19 @@ export default function AboutPage() {
         <div className="mt-10 border border-line">
           <BoardGrid members={boardMembers} />
         </div>
+        <Reveal className="mt-10">
+          <figure className="relative overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/team/board-group.jpg"
+              alt="The 2026–2028 board of La French Tech Phnom Penh"
+              className="aspect-[21/9] w-full object-cover"
+            />
+            <figcaption className="absolute bottom-0 left-0 bg-ink/85 px-5 py-3 text-sm text-white">
+              The 2026–2028 board takes office — March 2026
+            </figcaption>
+          </figure>
+        </Reveal>
       </section>
 
       {/* Institutional partners */}

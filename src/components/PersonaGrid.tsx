@@ -40,7 +40,7 @@ export function PersonaGrid() {
           >
             <div>
               <h3 className="display text-xl text-white">{p.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/60">
+              <p className="mt-3 text-base leading-relaxed text-white/60">
                 {p.copy}
               </p>
             </div>

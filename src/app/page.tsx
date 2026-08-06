@@ -6,6 +6,7 @@ import { EventCard } from "@/components/EventCard";
 import { BoardGrid } from "@/components/BoardGrid";
 import { PersonaGrid } from "@/components/PersonaGrid";
 import { KhmerBand } from "@/components/KhmerBand";
+import { PhotoStrip } from "@/components/PhotoStrip";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -59,7 +60,7 @@ export default function Home() {
               </h1>
             </Reveal>
             <Reveal delay={150}>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft/80">
+              <p className="mt-8 max-w-xl text-xl leading-relaxed text-ink-soft/80">
                 We connect French, Cambodian, and international founders,
                 investors, and tech talent — and build the bridge between the
                 French startup ecosystem and the Kingdom of Cambodia.
@@ -141,13 +142,32 @@ export default function Home() {
               <Reveal key={p.title} delay={i * 100}>
                 <div className="border-t-2 border-rouge pt-5">
                   <h3 className="display text-2xl text-ink">{p.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft/80">
+                  <p className="mt-3 text-base leading-relaxed text-ink-soft/80">
                     {p.copy}
                   </p>
                 </div>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Community in pictures */}
+      <section className="mx-auto max-w-6xl px-5 py-20 md:pb-32 md:pt-28">
+        <SectionHeading
+          eyebrow="The community"
+          title="Real people, real events"
+          intro="Tech Talks, Apéro Tech nights, forums — this is what the ecosystem looks like in person."
+        />
+        <div className="mt-12">
+          <PhotoStrip
+            photos={[
+              { src: "/images/events/event-3.jpg", alt: "Networking at an Apéro Tech night" },
+              { src: "/images/events/event-5.jpg", alt: "Audience at a French Tech Tech Talk" },
+              { src: "/images/events/event-7.jpg", alt: "Speaker on stage at a French Tech event" },
+              { src: "/images/team/team-1.jpg", alt: "The French Tech Phnom Penh team" },
+            ]}
+          />
         </div>
       </section>
 
@@ -159,7 +179,7 @@ export default function Home() {
             <h2 className="display mt-3 max-w-xl text-3xl md:text-4xl">
               The Francophonie Summit comes to Phnom Penh
             </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/80">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/80">
               Cambodia hosts the Sommet de la Francophonie — with the FrancoTech
               forum and a dedicated French Tech Pavilion. The moment to
               spotlight French and Francophone innovation in Southeast Asia.

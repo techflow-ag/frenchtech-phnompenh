@@ -28,11 +28,11 @@ export default function ContactPage() {
               <div>
                 <h2 className="eyebrow">Email</h2>
                 <a
-                  href="mailto:contact@frenchtech-phnompenh.com"
+                  href="mailto:frenchtech.pp@gmail.com"
                   className="mt-2 flex items-center gap-2 text-sm font-medium text-ink hover:text-rouge"
                 >
                   <Mail className="h-4 w-4 text-rouge" />
-                  contact@frenchtech-phnompenh.com
+                  frenchtech.pp@gmail.com
                 </a>
               </div>
               <div>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <div className="border border-line bg-mist p-6">
-                <p className="text-sm leading-relaxed text-ink-soft/80">
+                <p className="text-base leading-relaxed text-ink-soft/80">
                   Membership is <strong>free</strong> for individuals and
                   startups. Select &ldquo;Join as a member&rdquo; in the form
                   and tell us a bit about yourself.

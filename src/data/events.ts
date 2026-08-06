@@ -1,80 +1,56 @@
 import { EventItem } from "@/lib/types";
 
-// PLACEHOLDER DATA — replace with real events
 export const events: EventItem[] = [
+  // Upcoming
   {
-    slug: "french-tech-connect-13",
-    title: "French Tech Connect #13",
-    series: "French Tech Connect",
-    number: 13,
-    date: "2026-09-10T18:30:00+07:00",
-    endTime: "21:30",
-    venue: "Backyard Cafe, BKK1",
+    slug: "cambodia-digital-trade-forum-2026",
+    title: "Cambodia Digital Trade Forum & Online Expo",
+    date: "2026-09-11T09:00:00+07:00",
+    endTime: "17:00",
+    venue: "Diamond Island Convention & Exhibition Center, Koh Pich",
     city: "Phnom Penh",
     description:
-      "Our monthly networking night. Founders, investors, and tech enthusiasts — French, Cambodian, and international — over drinks in BKK1. Free and open to all.",
-    registrationUrl: "#",
-    tags: ["Networking"],
+      "The 3rd Cambodia Digital Trade Forum, September 11–13. Exhibit alongside 200+ booths, meet government, corporates, and MSMEs — and join the French Tech booth to gain national visibility across Cambodia's tech and trade ecosystem.",
+    image: "/images/events/event-4.jpg",
+    registrationUrl: "mailto:frenchtech.pp@gmail.com",
+    tags: ["Forum", "Expo"],
   },
   {
-    slug: "ai-in-cambodia-workshop",
-    title: "AI in Cambodia: Practical Workshop for SMEs",
-    date: "2026-09-25T17:30:00+07:00",
+    slug: "francotech-francophonie-summit-2026",
+    title: "FrancoTech — Sommet de la Francophonie",
+    date: "2026-11-14T09:00:00+07:00",
+    endTime: "18:00",
+    venue: "Francophonie Summit, Phnom Penh",
+    city: "Phnom Penh",
+    description:
+      "Cambodia hosts the Francophonie Summit for the first time, November 14–16 — with the FrancoTech forum and a dedicated French Tech Pavilion. The flagship moment for French and Francophone innovation in Southeast Asia.",
+    registrationUrl: "mailto:frenchtech.pp@gmail.com",
+    tags: ["Summit", "FrancoTech"],
+  },
+  // Past
+  {
+    slug: "apero-tech-july-2026",
+    title: "Apéro Tech — Rooftop Edition",
+    date: "2026-07-30T18:00:00+07:00",
     endTime: "20:00",
-    venue: "Factory Phnom Penh",
+    venue: "Rooftop, Penh House Hotel",
     city: "Phnom Penh",
     description:
-      "A hands-on workshop on deploying AI tools in Cambodian businesses — real use cases from local startups, live demos, and a Q&A with founders building AI products in the Kingdom.",
-    registrationUrl: "#",
-    tags: ["Workshop", "AI"],
+      "After-work networking with Phnom Penh's tech community — founders, investors, and tech enthusiasts over drinks at sunset. Free and open to all.",
+    image: "/images/events/event-1.jpg",
+    tags: ["Networking", "Apéro Tech"],
   },
   {
-    slug: "french-tech-connect-12",
-    title: "French Tech Connect #12",
-    series: "French Tech Connect",
-    number: 12,
-    date: "2026-07-17T18:30:00+07:00",
-    endTime: "21:30",
-    venue: "Sundown Social Club",
+    slug: "tech-talk-apps-ai-emerging-markets",
+    title: "Tech Talk: Apps, AI & Emerging Markets",
+    date: "2026-06-16T18:00:00+07:00",
+    endTime: "21:00",
+    venue: "The Last Stage, Aquation Theater, Koh Pich",
     city: "Phnom Penh",
     description:
-      "Summer edition of our networking night, with a spotlight on Cambodian fintech and a guest talk on cross-border payments in ASEAN.",
-    tags: ["Networking"],
-  },
-  {
-    slug: "startup-legal-basics",
-    title: "Setting Up a Business in Cambodia: Legal & Tax Basics",
-    date: "2026-06-05T17:30:00+07:00",
-    endTime: "20:00",
-    venue: "Raintree Cambodia",
-    city: "Phnom Penh",
-    description:
-      "A practical session for founders: company registration, QIP status, tax obligations, and hiring in Cambodia — with lawyers and accountants from the community.",
-    tags: ["Workshop", "Founders"],
-  },
-  {
-    slug: "french-tech-connect-11",
-    title: "French Tech Connect #11",
-    series: "French Tech Connect",
-    number: 11,
-    date: "2026-05-15T18:30:00+07:00",
-    endTime: "21:30",
-    venue: "Backyard Cafe, BKK1",
-    city: "Phnom Penh",
-    description:
-      "Networking night with a pitch corner: three startups from the community presented their products in 5 minutes each.",
-    tags: ["Networking", "Pitch"],
-  },
-  {
-    slug: "women-in-tech-panel",
-    title: "Women in Tech Cambodia: Building & Leading",
-    date: "2026-04-24T18:00:00+07:00",
-    endTime: "20:30",
-    venue: "Institut français du Cambodge",
-    city: "Phnom Penh",
-    description:
-      "A panel with women founders and tech leaders from the Cambodian and French ecosystems, followed by open networking.",
-    tags: ["Panel", "Women in Tech"],
+      "Our first flagship event drew 150+ attendees: a panel on apps, AI, and emerging markets with founders and investors from the French–Cambodian ecosystem, followed by open networking.",
+    image: "/images/events/event-6.jpg",
+    tags: ["Tech Talk", "AI"],
   },
 ];
 
