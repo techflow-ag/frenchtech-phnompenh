@@ -90,7 +90,7 @@ export function MemberDirectory() {
               className="group flex h-full flex-col border-b border-r border-line bg-paper p-6"
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-mist">
+                <div className="flex h-12 w-24 shrink-0 items-center justify-center bg-mist px-2">
                   {m.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
