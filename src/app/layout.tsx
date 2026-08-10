@@ -6,6 +6,7 @@ import {
   Fraunces,
   Space_Grotesk,
   IBM_Plex_Mono,
+  Montserrat,
 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -48,6 +49,12 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://frenchtech-phnompenh.vercel.app"),
   title: {
@@ -69,7 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${instrument.variable} ${notoKhmer.variable} ${fraunces.variable} ${spaceGrotesk.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${archivo.variable} ${instrument.variable} ${notoKhmer.variable} ${fraunces.variable} ${spaceGrotesk.variable} ${plexMono.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />
