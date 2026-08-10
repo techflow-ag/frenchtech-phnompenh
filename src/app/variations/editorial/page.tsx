@@ -58,10 +58,9 @@ export default function EditorialHome() {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <h1 className="mt-8 text-[2.5rem] font-bold leading-[0.95] tracking-tight text-ink sm:text-6xl md:text-[5.5rem]">
-                LA FRENCH TECH
-                <br />
-                <span className="text-rouge">PHNOM PENH</span>
+              <h1 className="mt-8 text-[2.25rem] font-bold leading-[1.0] tracking-tight text-ink sm:text-5xl md:text-[4rem]">
+                <span className="block whitespace-nowrap">LA FRENCH TECH</span>
+                <span className="block whitespace-nowrap text-rouge">PHNOM PENH</span>
               </h1>
             </Reveal>
             <Reveal delay={240}>
