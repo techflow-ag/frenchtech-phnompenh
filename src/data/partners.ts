@@ -5,17 +5,22 @@ export const sponsors: Sponsor[] = [
   {
     name: "CCI France Cambodge",
     tier: "institutional",
+    logo: "/images/partners/ccifc.png",
     website: "https://www.ccifcambodge.org",
     description: "French Chamber of Commerce in Cambodia — our host institution.",
   },
   {
     name: "Embassy of France in Cambodia",
     tier: "institutional",
+    logo: "/images/partners/embassy-france.png",
+    website: "https://kh.ambafrance.org",
     description: "Institutional support of the French Republic in the Kingdom.",
   },
   {
     name: "Expertise France",
     tier: "institutional",
+    logo: "/images/partners/expertise-france.png",
+    website: "https://www.expertisefrance.fr",
     description: "French public agency for international technical cooperation.",
   },
 ];

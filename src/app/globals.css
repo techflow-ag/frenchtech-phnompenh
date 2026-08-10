@@ -33,6 +33,17 @@ body {
   line-height: 1.05;
 }
 
+/* Variation typefaces */
+.font-serif-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+.font-grotesk {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+.font-mono {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
 .eyebrow {
   font-family: var(--font-archivo), system-ui, sans-serif;
   font-weight: 700;

@@ -27,6 +27,8 @@ export type InstitutionalPartner = {
   role: string;
   organization: string;
   photo?: string;
+  logo?: string;
+  website?: string;
   linkedin?: string;
 };
 

@@ -1,5 +1,6 @@
 import { BoardMember } from "@/lib/types";
 import { Reveal } from "./Reveal";
+import { LinkedinIcon } from "./SocialIcons";
 
 function initials(name: string) {
   return name
@@ -41,15 +42,26 @@ export function BoardGrid({
                 </div>
               )}
               {m.role !== "Board Member" && (
-                <span className="display absolute left-0 top-0 bg-rouge px-2 py-1 text-[0.6rem] text-white">
+                <span className="display absolute left-0 top-0 bg-rouge px-2 py-1 text-[0.6rem] uppercase text-white">
                   {m.role}
                 </span>
               )}
+              {m.linkedin && (
+                <a
+                  href={m.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${m.name} on LinkedIn`}
+                  className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center bg-bleu text-white opacity-0 transition-opacity duration-300 hover:bg-rouge group-hover:opacity-100 focus-visible:opacity-100"
+                >
+                  <LinkedinIcon className="h-4 w-4" />
+                </a>
+              )}
             </div>
-            <h3 className="display mt-4 text-sm text-ink">{m.name}</h3>
-            <p className="mt-1 text-xs leading-snug text-ink/60">{m.title}</p>
+            <h3 className="display mt-4 text-base text-ink">{m.name}</h3>
+            <p className="mt-1 text-sm leading-snug text-ink/60">{m.title}</p>
             {m.company && (
-              <p className="text-xs leading-snug text-ink/60">{m.company}</p>
+              <p className="text-sm leading-snug text-ink/60">{m.company}</p>
             )}
           </div>
         </Reveal>

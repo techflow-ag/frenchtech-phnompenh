@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { sponsors, partnershipExamples } from "@/data/partners";
+import { cambodiaLogos } from "@/data/ecosystem";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
+import { LogoWall } from "@/components/LogoWall";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -73,6 +75,21 @@ export default function PartnersPage() {
           </section>
         );
       })}
+
+      {/* Cambodia logo wall */}
+      <section className="border-t border-line bg-mist">
+        <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+          <SectionHeading
+            eyebrow="The ecosystem"
+            title="French companies already in Cambodia"
+            intro="Energy, banking, retail, telecoms — French business is woven into the Kingdom's economy. Our members are the startups writing its next chapter."
+            align="center"
+          />
+          <div className="mt-12">
+            <LogoWall logos={cambodiaLogos} />
+          </div>
+        </div>
+      </section>
 
       {/* Why partner */}
       <section

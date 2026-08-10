@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Archivo, Instrument_Sans, Noto_Sans_Khmer } from "next/font/google";
+import {
+  Archivo,
+  Instrument_Sans,
+  Noto_Sans_Khmer,
+  Fraunces,
+  Space_Grotesk,
+  IBM_Plex_Mono,
+} from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -19,6 +26,26 @@ const notoKhmer = Noto_Sans_Khmer({
   variable: "--font-noto-khmer",
   subsets: ["khmer"],
   weight: ["400", "700"],
+});
+
+// Variation typefaces (used only on the alternate homepage routes).
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+  style: ["normal", "italic"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -42,7 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${instrument.variable} ${notoKhmer.variable} h-full antialiased`}
+      className={`${archivo.variable} ${instrument.variable} ${notoKhmer.variable} ${fraunces.variable} ${spaceGrotesk.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />

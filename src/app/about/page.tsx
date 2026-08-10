@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { boardMembers, institutionalPartners } from "@/data/board";
-import { BoardGrid } from "@/components/BoardGrid";
+import { institutionalPartners } from "@/data/board";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -86,17 +85,17 @@ export default function AboutPage() {
       </section>
 
       {/* Team photo */}
-      <section className="mx-auto max-w-6xl px-5 pb-20 md:pb-28">
+      <section className="mx-auto max-w-5xl px-5 pb-20 md:pb-28">
         <Reveal>
-          <figure className="relative overflow-hidden">
+          <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/team/team-1.jpg"
               alt="The French Tech Phnom Penh community team"
-              className="aspect-[21/9] w-full object-cover"
+              className="h-auto w-full"
             />
-            <figcaption className="absolute bottom-0 left-0 bg-ink/85 px-5 py-3 text-sm text-white">
-              The community, Phnom Penh — 2026
+            <figcaption className="mt-3 text-sm text-ink/60">
+              The community gathering in Phnom Penh — 2026.
             </figcaption>
           </figure>
         </Reveal>
@@ -144,28 +143,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Board */}
-      <section id="board" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 md:py-28">
+      {/* Board — group photos (individual portraits live on the homepage) */}
+      <section id="board" className="mx-auto max-w-5xl scroll-mt-20 px-5 py-20 md:py-28">
         <SectionHeading
           eyebrow="The board 2026–2028"
-          title="Meet the board"
+          title="A new board takes office"
           intro="Nine volunteers took office in March 2026, on the International Day of Francophonie — five women and four men, all building in Cambodia."
         />
-        <div className="mt-10 border border-line">
-          <BoardGrid members={boardMembers} />
-        </div>
         <Reveal className="mt-10">
-          <figure className="relative overflow-hidden">
+          <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/team/board-group.jpg"
               alt="The 2026–2028 board of La French Tech Phnom Penh"
-              className="aspect-[21/9] w-full object-cover"
+              className="h-auto w-full"
             />
-            <figcaption className="absolute bottom-0 left-0 bg-ink/85 px-5 py-3 text-sm text-white">
-              The 2026–2028 board takes office — March 2026
+            <figcaption className="mt-3 text-sm text-ink/60">
+              The 2026–2028 board — Phnom Penh, March 2026.
             </figcaption>
           </figure>
+        </Reveal>
+        <Reveal className="mt-8">
+          <Link
+            href="/#board"
+            className="group inline-flex items-center gap-1.5 text-base font-semibold text-rouge"
+          >
+            Meet each board member
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </Reveal>
       </section>
 
@@ -179,13 +184,28 @@ export default function AboutPage() {
           />
           <div className="mt-10 grid gap-px border border-line bg-line md:grid-cols-3">
             {institutionalPartners.map((p, i) => (
-              <Reveal key={p.name} delay={i * 80}>
-                <div className="h-full bg-paper p-7">
-                  <h3 className="display text-lg text-ink">{p.name}</h3>
+              <Reveal key={p.name} delay={i * 80} className="h-full">
+                <a
+                  href={p.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-mist"
+                >
+                  {p.logo && (
+                    <div className="flex h-16 items-center">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        className="max-h-14 w-auto max-w-[80%] object-contain"
+                      />
+                    </div>
+                  )}
+                  <h3 className="display mt-5 text-lg text-ink">{p.name}</h3>
                   <p className="mt-2 text-sm text-ink-soft/80">
                     {p.organization}
                   </p>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>
