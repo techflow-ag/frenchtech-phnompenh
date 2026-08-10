@@ -62,8 +62,8 @@ export default function Home() {
               <p className="eyebrow">
                 Official French Tech Community · Cambodia
               </p>
-              <h1 className="display mt-5 text-5xl text-ink sm:text-7xl md:text-[6.5rem]">
-                French Tech
+              <h1 className="display mt-5 text-5xl text-ink sm:text-7xl md:text-[6rem]">
+                La French Tech
                 <br />
                 <span className="text-rouge">Phnom Penh</span>
               </h1>

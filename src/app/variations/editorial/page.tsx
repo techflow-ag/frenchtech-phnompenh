@@ -29,11 +29,10 @@ export default function EditorialHome() {
             <span className="h-2 w-2 bg-rouge" />
             La French Tech · Phnom Penh · Cambodia · Est. 2015
           </div>
-          <h1 className="mt-8 text-[3.25rem] font-bold leading-[0.92] tracking-tight text-ink sm:text-7xl md:text-[7.5rem]">
-            FRENCH
+          <h1 className="mt-8 text-[2.75rem] font-bold leading-[0.95] tracking-tight text-ink sm:text-6xl md:text-[6.5rem]">
+            LA FRENCH TECH
             <br />
-            TECH{" "}
-            <span className="text-rouge">×</span> KH
+            <span className="text-rouge">PHNOM PENH</span>
           </h1>
           <div className="mt-10 grid gap-8 border-t-2 border-ink pt-8 md:grid-cols-[1.4fr_1fr]">
             <p className="max-w-xl text-lg leading-relaxed text-ink md:text-xl">
@@ -129,18 +128,20 @@ export default function EditorialHome() {
           <div className="mt-10 grid gap-px border border-line-dark bg-line-dark sm:grid-cols-2 md:grid-cols-3">
             {boardMembers.map((m, i) => (
               <Reveal key={m.name} delay={(i % 3) * 60} className="h-full">
-                <div className="flex h-full items-center gap-4 bg-ink p-5">
+                <div className="group flex h-full flex-col bg-ink">
                   {m.photo && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={m.photo}
-                      alt={m.name}
-                      className="h-14 w-14 shrink-0 object-cover grayscale"
-                    />
+                    <div className="relative aspect-[4/5] overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={m.photo}
+                        alt={m.name}
+                        className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                      />
+                    </div>
                   )}
-                  <div className="min-w-0">
-                    <p className="truncate font-semibold text-white">{m.name}</p>
-                    <p className="truncate font-mono text-xs text-white/50">
+                  <div className="p-5">
+                    <p className="font-semibold text-white">{m.name}</p>
+                    <p className="mt-1 font-mono text-xs text-white/50">
                       {m.title}
                     </p>
                   </div>
@@ -166,17 +167,6 @@ export default function EditorialHome() {
           </Link>
         </div>
       </section>
-
-      <div className="bg-paper py-6 text-center font-mono text-xs uppercase tracking-widest text-ink/50">
-        Variation B (editorial) ·{" "}
-        <Link href="/" className="text-rouge underline">
-          current
-        </Link>{" "}
-        ·{" "}
-        <Link href="/variations/aerial" className="text-rouge underline">
-          variation A
-        </Link>
-      </div>
     </div>
   );
 }

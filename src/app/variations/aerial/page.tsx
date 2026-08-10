@@ -54,10 +54,10 @@ export default function AerialHome() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 md:pb-24">
           <p className="eyebrow !text-white/80">Official French Tech Community · Cambodia</p>
-          <h1 className="mt-4 max-w-4xl text-5xl font-light leading-[1.02] text-white sm:text-6xl md:text-8xl">
-            The French Tech community,
+          <h1 className="mt-4 max-w-4xl text-6xl font-light leading-[1.02] text-white sm:text-7xl md:text-9xl">
+            La French Tech
             <br />
-            <em className="font-medium italic text-white">from the heart of Phnom Penh.</em>
+            <em className="font-medium italic text-white">Phnom Penh</em>
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
             We connect French, Cambodian, and international founders, investors,
