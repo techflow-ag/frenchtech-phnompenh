@@ -7,7 +7,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Blog & News",
+  title: "Newsroom",
   description:
     "News and analysis from La French Tech Phnom Penh: the tech ecosystem in Cambodia, French companies, the Francophonie Summit, entrepreneurship.",
 };
@@ -26,8 +26,8 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
-        eyebrow="Blog & news"
-        title="The blog"
+        eyebrow="Newsroom"
+        title="Newsroom"
         khmer="ព័ត៌មាន"
         intro="Analysis, guides and news from the French–Cambodian tech ecosystem."
       />

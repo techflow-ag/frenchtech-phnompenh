@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { articles, getArticle } from "@/data/blog";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
+import { JOIN_FORM_URL } from "@/lib/config";
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -18,8 +19,14 @@ export async function generateMetadata({
   if (!a) return {};
   return {
     title: a.title,
-    description: a.excerpt,
-    openGraph: { title: a.title, description: a.excerpt, images: [a.cover] },
+    description: a.metaDescription,
+    keywords: a.keywords,
+    openGraph: {
+      title: a.title,
+      description: a.metaDescription,
+      type: "article",
+      images: [a.cover],
+    },
   };
 }
 
@@ -42,18 +49,23 @@ export default async function ArticlePage({
 
   return (
     <>
-      <article>
-        {/* Header */}
-        <div className="mx-auto max-w-3xl px-5 pt-12 md:pt-16">
+      <div className="mx-auto max-w-6xl px-5 pt-12 md:pt-16">
+        <Reveal>
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-rouge hover:text-bleu"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            All articles
+          </Link>
+        </Reveal>
+      </div>
+
+      <article className="mx-auto grid max-w-6xl gap-12 px-5 py-8 md:grid-cols-[2fr_1fr] md:py-12">
+        {/* Body — ~66% width */}
+        <div className="min-w-0">
           <Reveal>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-rouge hover:text-bleu"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              All articles
-            </Link>
-            <p className="eyebrow mt-6">
+            <p className="eyebrow">
               {article.category} · {article.readingTime} min read
             </p>
             <h1 className="display mt-3 text-4xl leading-tight text-ink md:text-5xl">
@@ -63,42 +75,84 @@ export default async function ArticlePage({
               {article.author} · {fmt(article.date)}
             </p>
           </Reveal>
-        </div>
 
-        {/* Cover */}
-        <div className="mx-auto mt-10 max-w-5xl px-5">
-          <Reveal>
+          <Reveal className="mt-8">
             <div className="overflow-hidden rounded-3xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={article.cover}
                 alt={article.title}
-                className="aspect-[16/8] w-full object-cover"
+                className="aspect-[16/9] w-full object-cover"
               />
             </div>
           </Reveal>
+
+          <div className="mt-10">
+            {article.sections.map((s, i) => (
+              <Reveal key={i} className="mb-8">
+                {s.heading && (
+                  <h2 className="display mb-4 mt-4 text-2xl text-ink">
+                    {s.heading}
+                  </h2>
+                )}
+                {s.body.map((p, j) => (
+                  <p
+                    key={j}
+                    className="mb-4 text-lg leading-relaxed text-ink-soft/90"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
 
-        {/* Body */}
-        <div className="mx-auto max-w-3xl px-5 py-16">
-          {article.sections.map((s, i) => (
-            <Reveal key={i} className="mb-8">
-              {s.heading && (
-                <h2 className="display mb-4 mt-4 text-2xl text-ink">
-                  {s.heading}
-                </h2>
-              )}
-              {s.body.map((p, j) => (
-                <p
-                  key={j}
-                  className="mb-4 text-lg leading-relaxed text-ink-soft/90"
-                >
-                  {p}
+        {/* Sticky CTA */}
+        <aside className="md:relative">
+          <div className="md:sticky md:top-24">
+            <div className="rounded-2xl border border-line bg-paper p-7 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.4)]">
+              <p className="eyebrow">Get involved</p>
+              <h2 className="display mt-2 text-2xl text-ink">
+                Join the community
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft/80">
+                Founders, investors and partners are welcome. It&apos;s free to
+                join the French Tech Phnom Penh community.
+              </p>
+              <a
+                href={JOIN_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-rouge px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-bleu"
+              >
+                Join us
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <Link
+                href="/events/register"
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-line px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-rouge hover:text-rouge"
+              >
+                Register for events
+              </Link>
+              <div className="mt-6 border-t border-line pt-6">
+                <p className="text-xs font-semibold uppercase tracking-wider text-ink/50">
+                  Topics
                 </p>
-              ))}
-            </Reveal>
-          ))}
-        </div>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {article.keywords.slice(0, 4).map((k) => (
+                    <span
+                      key={k}
+                      className="rounded-full border border-line px-2.5 py-1 text-xs text-ink/60"
+                    >
+                      {k}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
       </article>
 
       {/* More articles */}
