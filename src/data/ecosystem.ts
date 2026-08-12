@@ -1,3 +1,41 @@
+// The French Tech Phnom Penh ecosystem — members, partners and supporters.
+// A multi-sector community: fintech, AI, proptech, edtech, cybersecurity,
+// e-commerce, robotics, agritech, media, institutions.
+export const ecosystemPartners: { name: string; logo: string }[] = [
+  { name: "ShopRunBack", logo: "/images/members/shoprunback.png" },
+  { name: "BiKay", logo: "/images/members/bikay.png" },
+  { name: "Canadia Impact Fund", logo: "/images/members/canadia-impact-fund.png" },
+  { name: "TechFlow", logo: "/images/members/techflow.png" },
+  { name: "SBI", logo: "/images/members/sbi-group.png" },
+  { name: "CCI France Cambodge", logo: "/images/partners/ccifc.png" },
+  { name: "Ambassade de France au Cambodge", logo: "/images/partners/embassy-france.png" },
+  { name: "Business France", logo: "/images/community-partners/business-france.png" },
+  { name: "BRED Bank Cambodia", logo: "/images/partners/bred-cambodia.png" },
+  { name: "OCIC", logo: "/images/community-partners/ocic.png" },
+  { name: "EuroCham Cambodia", logo: "/images/community-partners/eurocham-cambodia.png" },
+  { name: "Khmer Enterprise", logo: "/images/community-partners/khmer-enterprise.jpg" },
+  { name: "Cambodia Startup", logo: "/images/community-partners/cambodia-startup.png" },
+  { name: "Plug and Play", logo: "/images/community-partners/plug-and-play.png" },
+  { name: "CADT", logo: "/images/community-partners/cadt.png" },
+  { name: "CamTech", logo: "/images/community-partners/camtech.png" },
+  { name: "DICHI Academy", logo: "/images/community-partners/dichi-academy.png" },
+  { name: "Connexion", logo: "/images/community-partners/connexion.jpg" },
+  { name: "Cambodia Investment Review", logo: "/images/community-partners/cambodia-investment-review.jpg" },
+  { name: "Kiripost", logo: "/images/community-partners/kiripost.png" },
+  { name: "Le Petit Journal", logo: "/images/community-partners/le-petit-journal.png" },
+  { name: "Cambodge Mag", logo: "/images/community-partners/cambodge-mag.jpg" },
+  { name: "B2B Cambodia", logo: "/images/community-partners/b2b-cambodia.jpg" },
+  { name: "Omniscia", logo: "/images/community-partners/omniscia.png" },
+  { name: "SKAI Tech", logo: "/images/community-partners/skai-tech.png" },
+  { name: "Melon Rouge Agency", logo: "/images/community-partners/melon-rouge.png" },
+  { name: "iCare Benefits", logo: "/images/community-partners/icare-benefits.jpg" },
+  { name: "ADD Asia Data Destruction", logo: "/images/community-partners/add-asia.png" },
+  { name: "Pravinya eServices", logo: "/images/community-partners/pravinya.png" },
+  { name: "DeliShop", logo: "/images/community-partners/delishop.png" },
+  { name: "Falcon", logo: "/images/community-partners/falcon.png" },
+  { name: "MHC Mobile Health Care", logo: "/images/community-partners/mhc.png" },
+];
+
 // French & French-linked companies with a presence in Cambodia — logo wall.
 export const cambodiaLogos: { name: string; logo: string }[] = [
   { name: "TotalEnergies", logo: "/images/partners/totalenergies.png" },

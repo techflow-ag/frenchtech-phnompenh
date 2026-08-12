@@ -8,6 +8,10 @@ import { Reveal } from "@/components/Reveal";
 import { LogoWall } from "@/components/LogoWall";
 import { PersonaGrid } from "@/components/PersonaGrid";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { LinkedinIcon } from "@/components/SocialIcons";
+import { Quote } from "@/components/Quote";
+import { PressSection } from "@/components/PressSection";
+import { FinalCTA } from "@/components/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Homepage — Editorial",
@@ -234,6 +238,14 @@ export default function EditorialHome() {
         </div>
       </section>
 
+      {/* Quote */}
+      <section className="border-b-2 border-ink bg-mist px-5 py-16 md:py-24">
+        <Quote />
+      </section>
+
+      {/* Press */}
+      <PressSection />
+
       {/* Board — 4 per row mosaic */}
       <section className="border-b-2 border-ink bg-ink text-white">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
@@ -256,11 +268,24 @@ export default function EditorialHome() {
                       />
                     </div>
                   )}
-                  <div className="p-4">
-                    <p className="font-semibold text-white">{m.name}</p>
-                    <p className="mt-1 font-mono text-[0.7rem] leading-snug text-white/50">
-                      {m.title}
-                    </p>
+                  <div className="flex items-start justify-between gap-2 p-4">
+                    <div className="min-w-0">
+                      <p className="font-semibold text-white">{m.name}</p>
+                      <p className="mt-1 font-mono text-[0.7rem] leading-snug text-white/50">
+                        {m.title}
+                      </p>
+                    </div>
+                    {m.linkedin && (
+                      <a
+                        href={m.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${m.name} on LinkedIn`}
+                        className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center bg-white/10 text-white transition-colors hover:bg-rouge"
+                      >
+                        <LinkedinIcon className="h-3.5 w-3.5" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </Reveal>
@@ -292,6 +317,8 @@ export default function EditorialHome() {
           <NewsletterForm />
         </div>
       </section>
+
+      <FinalCTA />
     </div>
   );
 }

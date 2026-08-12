@@ -11,6 +11,9 @@ import { LogoWall } from "@/components/LogoWall";
 import { BoardGrid } from "@/components/BoardGrid";
 import { PersonaGrid } from "@/components/PersonaGrid";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { Quote } from "@/components/Quote";
+import { PressSection } from "@/components/PressSection";
+import { FinalCTA } from "@/components/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Homepage — Aerial",
@@ -269,6 +272,9 @@ export default function AerialHome() {
         </div>
       </section>
 
+      {/* Press */}
+      <PressSection />
+
       {/* Francophonie */}
       <section className="bg-bleu text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-20 md:flex-row md:items-center md:justify-between">
@@ -288,6 +294,11 @@ export default function AerialHome() {
             </Link>
           </Reveal>
         </div>
+      </section>
+
+      {/* Quote */}
+      <section className="bg-mist px-5 py-24 md:py-32">
+        <Quote />
       </section>
 
       {/* Board */}
@@ -327,6 +338,8 @@ export default function AerialHome() {
           <NewsletterForm />
         </div>
       </section>
+
+      <FinalCTA />
     </div>
   );
 }

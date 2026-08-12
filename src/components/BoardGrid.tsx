@@ -46,23 +46,27 @@ export function BoardGrid({
                   {m.role}
                 </span>
               )}
+            </div>
+            <div className="mt-4 flex items-start justify-between gap-2">
+              <div>
+                <h3 className="display text-base text-ink">{m.name}</h3>
+                <p className="mt-1 text-sm leading-snug text-ink/60">{m.title}</p>
+                {m.company && (
+                  <p className="text-sm leading-snug text-ink/60">{m.company}</p>
+                )}
+              </div>
               {m.linkedin && (
                 <a
                   href={m.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${m.name} on LinkedIn`}
-                  className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center bg-bleu text-white opacity-0 transition-opacity duration-300 hover:bg-rouge group-hover:opacity-100 focus-visible:opacity-100"
+                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-bleu text-white transition-colors hover:bg-rouge"
                 >
                   <LinkedinIcon className="h-4 w-4" />
                 </a>
               )}
             </div>
-            <h3 className="display mt-4 text-base text-ink">{m.name}</h3>
-            <p className="mt-1 text-sm leading-snug text-ink/60">{m.title}</p>
-            {m.company && (
-              <p className="text-sm leading-snug text-ink/60">{m.company}</p>
-            )}
           </div>
         </Reveal>
       ))}

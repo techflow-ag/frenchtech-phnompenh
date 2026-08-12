@@ -5,6 +5,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 
+import { FinalCTA } from "@/components/FinalCTA";
+
 export const metadata: Metadata = {
   title: "Contact",
   description:
@@ -70,6 +72,8 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </section>
+
+      <FinalCTA />
     </>
   );
 }

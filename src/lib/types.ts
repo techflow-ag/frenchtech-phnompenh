@@ -1,9 +1,12 @@
+export type AgendaItem = { when: string; title: string; detail?: string };
+
 export type EventItem = {
   slug: string;
   title: string;
   series?: string; // e.g. "French Tech Connect"
   number?: number; // series number, e.g. #12
   date: string; // ISO date
+  endDate?: string; // ISO date for multi-day events
   endTime?: string;
   venue: string;
   city: string;
@@ -11,6 +14,11 @@ export type EventItem = {
   image?: string;
   registrationUrl?: string;
   tags: string[];
+  featured?: boolean;
+  // Rich content for the event detail page:
+  longDescription?: string[];
+  stats?: { value: string; label: string }[];
+  agenda?: AgendaItem[];
 };
 
 export type BoardMember = {

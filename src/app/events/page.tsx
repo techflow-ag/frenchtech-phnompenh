@@ -7,6 +7,8 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 
+import { FinalCTA } from "@/components/FinalCTA";
+
 export const metadata: Metadata = {
   title: "Events",
   description:
@@ -85,6 +87,8 @@ export default function EventsPage() {
           </Reveal>
         </div>
       </section>
+
+      <FinalCTA />
     </>
   );
 }

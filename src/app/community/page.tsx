@@ -4,7 +4,10 @@ import { ArrowRight } from "lucide-react";
 import { MemberDirectory } from "@/components/MemberDirectory";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
+import { LogoWall } from "@/components/LogoWall";
+import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
+import { ecosystemPartners } from "@/data/ecosystem";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -26,7 +29,22 @@ export default function CommunityPage() {
         <MemberDirectory />
       </section>
 
+      {/* Full ecosystem logo wall */}
       <section className="border-t border-line bg-mist">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+          <SectionHeading
+            eyebrow="Our ecosystem"
+            title="Members, partners & supporters"
+            intro="A multi-sector community spanning fintech, AI, proptech, edtech, cybersecurity, e-commerce, robotics, agritech and media — with the institutions that back it."
+            align="center"
+          />
+          <div className="mt-12">
+            <LogoWall logos={ecosystemPartners} />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <SectionHeading
@@ -46,6 +64,8 @@ export default function CommunityPage() {
           </div>
         </div>
       </section>
+
+      <FinalCTA />
     </>
   );
 }

@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { upcomingEvents, pastEvents } from "@/data/events";
-import { cambodiaLogos } from "@/data/ecosystem";
+import { ecosystemPartners } from "@/data/ecosystem";
 import { Reveal } from "@/components/Reveal";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { Quote } from "@/components/Quote";
+import { PressSection } from "@/components/PressSection";
 
 export const metadata: Metadata = {
   title: "Homepage — Grand Paris style",
@@ -149,7 +151,7 @@ export default function GrandParisHome() {
             <Underlined before="Parmi nos " word="membres" className="justify-center [text-align:center]" />
           </Reveal>
           <div className="mt-12 grid grid-cols-2 items-center gap-x-10 gap-y-10 sm:grid-cols-3 md:grid-cols-5">
-            {cambodiaLogos.map((l, i) => (
+            {ecosystemPartners.slice(0, 15).map((l, i) => (
               <Reveal key={l.name} delay={(i % 5) * 60}>
                 <div className="flex h-14 items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -225,6 +227,9 @@ export default function GrandParisHome() {
         </div>
       </section>
 
+      {/* Press */}
+      <PressSection />
+
       {/* Newsletter */}
       <section className="border-y border-line bg-mist">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-14 md:flex-row md:items-center md:justify-between">
@@ -236,6 +241,11 @@ export default function GrandParisHome() {
           </div>
           <NewsletterForm />
         </div>
+      </section>
+
+      {/* Quote */}
+      <section className="bg-mist px-5 py-20 md:py-24">
+        <Quote />
       </section>
 
       {/* Adhérer — navy persona cards */}

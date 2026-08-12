@@ -9,6 +9,7 @@ export const boardMembers: BoardMember[] = [
     title: "CEO, SBI Group APAC",
     company: "Co-founder, BiKay",
     photo: "/images/board/cedric-kang.jpg",
+    linkedin: "https://www.linkedin.com/in/cedric-kang-3316a324/",
   },
   {
     name: "Thierry Tea",
@@ -57,6 +58,7 @@ export const boardMembers: BoardMember[] = [
     role: "Board Member",
     title: "Solutions BI",
     photo: "/images/board/jannine-sem.jpg",
+    linkedin: "https://www.linkedin.com/in/janninesem/",
   },
   {
     name: "Eva Berlinson",

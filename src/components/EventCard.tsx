@@ -1,4 +1,5 @@
-import { MapPin, Clock, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { MapPin, CalendarDays, ArrowUpRight } from "lucide-react";
 import { EventItem } from "@/lib/types";
 
 function formatDate(iso: string) {
@@ -7,12 +8,16 @@ function formatDate(iso: string) {
     day: d.toLocaleDateString("en-GB", { day: "2-digit", timeZone: "Asia/Phnom_Penh" }),
     month: d.toLocaleDateString("en-GB", { month: "short", timeZone: "Asia/Phnom_Penh" }),
     year: d.toLocaleDateString("en-GB", { year: "numeric", timeZone: "Asia/Phnom_Penh" }),
-    time: d.toLocaleTimeString("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZone: "Asia/Phnom_Penh",
-    }),
   };
+}
+
+function rangeLabel(event: EventItem) {
+  const s = formatDate(event.date);
+  if (event.endDate) {
+    const e = formatDate(event.endDate);
+    return `${s.day}–${e.day} ${e.month} ${e.year}`;
+  }
+  return `${s.day} ${s.month} ${s.year}`;
 }
 
 export function EventCard({
@@ -24,9 +29,10 @@ export function EventCard({
 }) {
   const d = formatDate(event.date);
   return (
-    <article
+    <Link
+      href={`/events/${event.slug}`}
       className={`group flex h-full flex-col border border-line bg-paper transition-colors ${
-        past ? "" : "hover:border-rouge"
+        past ? "hover:border-ink/30" : "hover:border-rouge"
       }`}
     >
       {event.image && (
@@ -35,7 +41,7 @@ export function EventCard({
           <img
             src={event.image}
             alt={event.title}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>
       )}
@@ -64,26 +70,20 @@ export function EventCard({
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink/60">
             <span className="flex items-center gap-1.5">
+              <CalendarDays className="h-3.5 w-3.5" />
+              {rangeLabel(event)}
+            </span>
+            <span className="flex items-center gap-1.5">
               <MapPin className="h-3.5 w-3.5" />
               {event.venue}
             </span>
-            <span className="flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5" />
-              {d.time}
-              {event.endTime ? ` – ${event.endTime}` : ""}
-            </span>
           </div>
-          {!past && event.registrationUrl && (
-            <a
-              href={event.registrationUrl}
-              className="mt-5 inline-flex items-center gap-1.5 text-base font-semibold text-rouge transition-colors hover:text-bleu"
-            >
-              Register
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          )}
+          <span className="mt-5 inline-flex items-center gap-1.5 text-base font-semibold text-rouge">
+            {past ? "View recap" : "View details"}
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

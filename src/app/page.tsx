@@ -9,9 +9,12 @@ import { KhmerBand } from "@/components/KhmerBand";
 import { EventGallery } from "@/components/EventGallery";
 import { LogoWall } from "@/components/LogoWall";
 import { cambodiaLogos } from "@/data/ecosystem";
-import { NewsletterForm } from "@/components/NewsletterForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
+import { Quote } from "@/components/Quote";
+import { PressSection } from "@/components/PressSection";
+import { WelcomeGuide } from "@/components/WelcomeGuide";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const stats = [
   { value: "150+", label: "Guests at our first Tech Talk, June 2026" },
@@ -200,6 +203,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Phnom Penh photo band */}
+      <section className="relative">
+        <div className="relative h-[42vh] min-h-[320px] w-full overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/media/photos/phnompenh-skyline.jpg"
+            alt="The Phnom Penh skyline"
+            className="img-settle h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-8">
+            <Reveal>
+              <p lang="km" className="font-khmer text-2xl text-white/80">
+                ភ្នំពេញ
+              </p>
+              <p className="display mt-2 text-2xl text-white md:text-4xl">
+                Phnom Penh, our home base.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+        <span className="tricolore" aria-hidden="true" />
+      </section>
+
       {/* Cambodia logo wall */}
       <section className="border-b border-line bg-mist">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
@@ -237,30 +264,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Francophonie Summit spotlight */}
+      {/* Press */}
+      <PressSection />
+
+      {/* Francophonie Summit spotlight — French Tech Asia Forum */}
       <section className="bg-bleu text-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-16 md:flex-row md:items-center md:justify-between md:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-[1.3fr_1fr] md:py-20">
           <Reveal>
-            <p className="eyebrow !text-white/70">November 14–16, 2026</p>
-            <h2 className="display mt-3 max-w-xl text-3xl md:text-4xl">
-              The Francophonie Summit comes to Phnom Penh
+            <p className="eyebrow !text-white/70">14–17 November 2026 · Koh Pich</p>
+            <h2 className="display mt-3 max-w-xl text-3xl md:text-5xl">
+              French Tech Asia Forum, at the Francophonie Summit
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/80">
-              Cambodia hosts the Sommet de la Francophonie — with the FrancoTech
-              forum and a dedicated French Tech Pavilion. The moment to
-              spotlight French and Francophone innovation in Southeast Asia.
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80">
+              Cambodia hosts the 20th Sommet de la Francophonie — 90+ countries,
+              100,000+ visitors. La French Tech Phnom Penh runs a dedicated
+              pavilion at FrancoTech and a full week of events for founders,
+              investors and communities from across the Francophone world.
             </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/events/french-tech-asia-forum-2026"
+                className="display inline-flex items-center gap-2 bg-white px-7 py-4 text-sm text-bleu transition-colors hover:bg-rouge hover:text-white"
+              >
+                Discover the forum
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/events/register"
+                className="display inline-flex items-center gap-2 border border-white/40 px-7 py-4 text-sm text-white transition-colors hover:border-white"
+              >
+                Register your interest
+              </Link>
+            </div>
           </Reveal>
           <Reveal delay={150}>
-            <Link
-              href="/partners#become-a-partner"
-              className="display inline-flex items-center gap-2 bg-white px-7 py-4 text-sm text-bleu transition-colors hover:bg-rouge hover:text-white"
-            >
-              Partner with us
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="overflow-hidden rounded-2xl shadow-2xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/media/events/francotech-poster.jpg"
+                alt="French Tech Asia Forum — 14-17 November 2026, Phnom Penh"
+                className="w-full object-cover"
+              />
+            </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* Board quote */}
+      <section className="bg-mist px-5 py-20 md:py-28">
+        <Quote />
       </section>
 
       {/* Board */}
@@ -291,19 +343,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-16 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 className="display text-2xl text-ink">Stay in the loop</h2>
-            <p className="mt-2 text-sm text-ink-soft/80">
-              One email per month: next events, ecosystem news, opportunities.
-              No spam.
-            </p>
-          </div>
-          <NewsletterForm />
-        </div>
-      </section>
+      {/* Welcome guide — email capture */}
+      <WelcomeGuide />
+
+      {/* Final CTA */}
+      <FinalCTA />
     </>
   );
 }

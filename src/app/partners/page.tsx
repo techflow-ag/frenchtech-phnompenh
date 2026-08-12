@@ -8,6 +8,8 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { LogoWall } from "@/components/LogoWall";
 import { Reveal } from "@/components/Reveal";
 
+import { FinalCTA } from "@/components/FinalCTA";
+
 export const metadata: Metadata = {
   title: "Partners & Sponsors",
   description:
@@ -126,6 +128,8 @@ export default function PartnersPage() {
           </Reveal>
         </div>
       </section>
+
+      <FinalCTA />
     </>
   );
 }
