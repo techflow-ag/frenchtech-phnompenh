@@ -17,13 +17,13 @@ export function PressSection() {
         <div>
           <Reveal>
             <span className="tricolore tricolore--on-light w-12" aria-hidden="true" />
-            <p className="eyebrow mt-4">Presse & médias</p>
+            <p className="eyebrow mt-4">Press & media</p>
             <h2 className="display mt-3 text-4xl text-ink md:text-5xl">
-              Ils parlent <span className="text-rouge">de nous.</span>
+              They talk <span className="text-rouge">about us.</span>
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft/80">
-              De la presse cambodgienne aux relais de l&apos;écosystème, la
-              communauté fait l&apos;actualité — labellisation, board, événements.
+              From the Cambodian press to the ecosystem&apos;s own outlets, the
+              community makes the news — labelling, board, events.
             </p>
           </Reveal>
         </div>

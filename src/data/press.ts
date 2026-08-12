@@ -3,7 +3,7 @@ export type PressItem = {
   outlet: string;
   title: string;
   date: string; // ISO
-  kind: "Article" | "Interview" | "Communiqué";
+  kind: "Article" | "Interview" | "Press release";
   url: string;
 };
 
@@ -35,7 +35,7 @@ export const press: PressItem[] = [
   {
     outlet: "Cambodge Mag",
     title:
-      "Nouveau bureau exécutif de la communauté tech avant le Sommet de la Francophonie",
+      "New tech community executive board takes office ahead of the Francophonie Summit",
     date: "2026-03-22",
     kind: "Article",
     url: "https://www.cambodgemag.com/en/post/new-tech-community-executive-board-takes-office-ahead-of-francophonie-summit",
@@ -49,9 +49,9 @@ export const press: PressItem[] = [
   },
   {
     outlet: "Mission French Tech",
-    title: "Labellisation des Capitales et Communautés 2026-2028",
+    title: "Labelling of the French Tech Capitals and Communities 2026-2028",
     date: "2026-05-06",
-    kind: "Communiqué",
+    kind: "Press release",
     url: "https://lafrenchtech.gouv.fr/",
   },
 ];

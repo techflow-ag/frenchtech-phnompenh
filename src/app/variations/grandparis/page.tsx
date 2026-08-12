@@ -14,32 +14,32 @@ export const metadata: Metadata = {
 };
 
 const ecosystem = [
-  { value: "60", label: "Startups & organisations membres" },
-  { value: "150+", label: "Participants à notre premier Tech Talk" },
-  { value: "200+", label: "Entreprises françaises au Cambodge" },
-  { value: "57", label: "Pays dans le réseau French Tech" },
+  { value: "60", label: "Member startups & organizations" },
+  { value: "150+", label: "Guests at our first Tech Talk" },
+  { value: "200+", label: "French companies in Cambodia" },
+  { value: "57", label: "Countries in the French Tech network" },
 ];
 
 const programmes = [
   {
     title: "Connect",
-    copy: "French Tech Connect, ateliers et tables rondes chaque mois — fondateurs, investisseurs et talents.",
+    copy: "French Tech Connect, workshops and roundtables every month — founders, investors and talent.",
   },
   {
     title: "Grow",
-    copy: "Un accompagnement concret pour lancer et scaler au Cambodge : juridique, fiscal, recrutement, financement.",
+    copy: "Concrete support to launch and scale in Cambodia: legal, tax, hiring, funding.",
   },
   {
     title: "Bridge",
-    copy: "On relie les startups françaises aux corporates cambodgiens et au réseau mondial de 100+ communautés.",
+    copy: "We connect French startups to Cambodian corporates and the global network of 100+ communities.",
   },
 ];
 
 const personas = [
-  { title: "Start-ups", href: "/contact#join" },
-  { title: "Grands groupes & ETI", href: "/partners#become-a-partner" },
-  { title: "Investisseurs", href: "/community" },
-  { title: "Incubateurs & partenaires", href: "/partners#become-a-partner" },
+  { title: "Startups", href: "/contact#join" },
+  { title: "Corporates & SMEs", href: "/partners#become-a-partner" },
+  { title: "Investors", href: "/community" },
+  { title: "Incubators & partners", href: "/partners#become-a-partner" },
 ];
 
 // Heading with the FrenchTech-style red underline under one keyword.
@@ -85,7 +85,7 @@ export default function GrandParisHome() {
           <Reveal>
             <div className="flex h-full flex-col justify-center rounded-3xl bg-white p-8 shadow-[0_20px_60px_-25px_rgba(0,0,0,0.25)] ring-1 ring-black/5 md:p-12">
               <p className="text-sm font-semibold uppercase tracking-wider text-rouge">
-                Communauté officielle · Cambodge
+                Official community · Cambodia
               </p>
               <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
                 La French Tech
@@ -93,21 +93,21 @@ export default function GrandParisHome() {
                 <span className="text-rouge">Phnom Penh</span>
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-ink-soft/80">
-                Rassembler les énergies · Connecter les acteurs · Multiplier les
-                impacts de l&apos;écosystème tech franco-cambodgien.
+                Bringing energies together · Connecting the players · Multiplying the
+                impact of the French–Cambodian tech ecosystem.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/about"
                   className="inline-flex items-center gap-2 rounded-full bg-rouge px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-ink"
                 >
-                  Qui sommes-nous ?
+                  Who we are
                 </Link>
                 <Link
                   href="/contact#join"
                   className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-ink transition-colors hover:border-rouge hover:text-rouge"
                 >
-                  Prendre rendez-vous
+                  Book a meeting
                 </Link>
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function GrandParisHome() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/events/event-3.jpg"
-                alt="Un événement French Tech Phnom Penh"
+                alt="A French Tech Phnom Penh event"
                 className="img-settle h-full min-h-[280px] w-full object-cover"
               />
             </div>
@@ -125,10 +125,10 @@ export default function GrandParisHome() {
         </div>
       </section>
 
-      {/* Écosystème */}
+      {/* Ecosystem */}
       <section className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
         <Reveal>
-          <Underlined before="Notre " word="écosystème" className="justify-center text-ink [text-align:center]" />
+          <Underlined before="Our " word="ecosystem" className="justify-center text-ink [text-align:center]" />
         </Reveal>
         <div className="mt-14 grid grid-cols-2 gap-8 md:grid-cols-4">
           {ecosystem.map((s, i) => (
@@ -148,7 +148,7 @@ export default function GrandParisHome() {
       <section className="border-t border-line bg-mist">
         <div className="mx-auto max-w-6xl px-5 py-16 text-center md:py-20">
           <Reveal>
-            <Underlined before="Parmi nos " word="membres" className="justify-center [text-align:center]" />
+            <Underlined before="Among our " word="members" className="justify-center [text-align:center]" />
           </Reveal>
           <div className="mt-12 grid grid-cols-2 items-center gap-x-10 gap-y-10 sm:grid-cols-3 md:grid-cols-5">
             {ecosystemPartners.slice(0, 15).map((l, i) => (
@@ -171,10 +171,10 @@ export default function GrandParisHome() {
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
           <Reveal>
-            <Underlined before="Nos " word="programmes" className="justify-center text-white [text-align:center]" />
+            <Underlined before="Our " word="programmes" className="justify-center text-white [text-align:center]" />
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70">
-              Relais de la Mission French Tech au Cambodge, on fédère l&apos;écosystème
-              local et on l&apos;ouvre au réseau international.
+              As the French Tech Mission's relay in Cambodia, we federate the local
+              ecosystem and open it to the international network.
             </p>
           </Reveal>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -190,10 +190,10 @@ export default function GrandParisHome() {
         </div>
       </section>
 
-      {/* Actualité */}
+      {/* News */}
       <section className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
         <Reveal>
-          <Underlined before="Notre " word="actualité" className="justify-center [text-align:center]" />
+          <Underlined before="Our " word="news" className="justify-center [text-align:center]" />
         </Reveal>
         <div className="mt-14 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-4">
           {news.map((e, i) => (
@@ -218,7 +218,7 @@ export default function GrandParisHome() {
                     href="/events"
                     className="mt-auto pt-4 text-sm font-semibold text-rouge hover:text-ink"
                   >
-                    Lire →
+                    Read →
                   </Link>
                 </div>
               </article>
@@ -234,9 +234,9 @@ export default function GrandParisHome() {
       <section className="border-y border-line bg-mist">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-14 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-2xl font-extrabold text-ink">La newsletter</h2>
+            <h2 className="text-2xl font-extrabold text-ink">The newsletter</h2>
             <p className="mt-2 text-sm text-ink-soft/80">
-              Un e-mail par mois : événements, actus de l&apos;écosystème, opportunités.
+              One email a month: events, ecosystem news, opportunities.
             </p>
           </div>
           <NewsletterForm />
@@ -248,11 +248,11 @@ export default function GrandParisHome() {
         <Quote />
       </section>
 
-      {/* Adhérer — navy persona cards */}
+      {/* Join — navy persona cards */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
           <Reveal>
-            <Underlined before="" word="Adhérer" after=" à la communauté" className="justify-center text-white [text-align:center]" />
+            <Underlined before="" word="Join" after=" the community" className="justify-center text-white [text-align:center]" />
           </Reveal>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {personas.map((p, i) => (
@@ -275,7 +275,7 @@ export default function GrandParisHome() {
       {/* En photos */}
       <section className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
         <Reveal>
-          <Underlined before="La communauté en " word="photos" className="justify-center [text-align:center]" />
+          <Underlined before="The community in " word="pictures" className="justify-center [text-align:center]" />
         </Reveal>
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
           {gallery.map((src, i) => (
@@ -284,7 +284,7 @@ export default function GrandParisHome() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={src}
-                  alt="Communauté French Tech Phnom Penh"
+                  alt="La French Tech Phnom Penh community"
                   className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -298,20 +298,20 @@ export default function GrandParisHome() {
         <div className="mx-auto max-w-6xl px-5 py-20 text-center md:py-24">
           <Reveal>
             <h2 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight md:text-5xl">
-              Prêt·e à rejoindre l&apos;écosystème tech franco-cambodgien ?
+              Ready to join the French–Cambodian tech ecosystem?
             </h2>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact#join"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-rouge transition-colors hover:bg-ink hover:text-white"
               >
-                Adhérer
+                Join us
               </Link>
               <Link
                 href="/events"
                 className="inline-flex items-center gap-2 rounded-full border border-white/60 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-rouge"
               >
-                Voir les événements
+                See the events
               </Link>
             </div>
           </Reveal>

@@ -5,8 +5,8 @@ import { Reveal } from "./Reveal";
 import { JOIN_FORM_URL } from "@/lib/config";
 
 export function FinalCTA({
-  title = "Ensemble, connectons l'écosystème tech franco-cambodgien.",
-  eyebrow = "Rejoindre la communauté",
+  title = "Together, let's connect the French–Cambodian tech ecosystem.",
+  eyebrow = "Join the community",
 }: {
   title?: string;
   eyebrow?: string;
@@ -53,14 +53,14 @@ export function FinalCTA({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-bleu transition-colors hover:bg-rouge hover:text-white"
               >
-                Nous rejoindre
+                Join us
                 <ArrowRight className="h-4 w-4" />
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-white/50 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-bleu"
               >
-                Nous contacter
+                Contact us
               </Link>
             </div>
           </div>

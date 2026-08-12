@@ -9,11 +9,11 @@ import { Reveal } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Blog & News",
   description:
-    "Actualités et analyses de La French Tech Phnom Penh : écosystème tech au Cambodge, entreprises françaises, Sommet de la Francophonie, entrepreneuriat.",
+    "News and analysis from La French Tech Phnom Penh: the tech ecosystem in Cambodia, French companies, the Francophonie Summit, entrepreneurship.",
 };
 
 function fmt(iso: string) {
-  return new Date(iso).toLocaleDateString("fr-FR", {
+  return new Date(iso).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -26,10 +26,10 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
-        eyebrow="Blog & actualités"
-        title="Le blog"
+        eyebrow="Blog & news"
+        title="The blog"
         khmer="ព័ត៌មាន"
-        intro="Analyses, guides et actualités de l'écosystème tech franco-cambodgien."
+        intro="Analysis, guides and news from the French–Cambodian tech ecosystem."
       />
 
       {/* Lead article */}
@@ -58,7 +58,7 @@ export default function BlogPage() {
                 {lead.excerpt}
               </p>
               <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-rouge">
-                Lire l&apos;article
+                Read the article
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </div>

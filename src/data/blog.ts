@@ -13,41 +13,41 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "la-french-tech-au-cambodge",
-    title: "La French Tech au Cambodge : une communauté qui accélère",
+    title: "French Tech in Cambodia: a community picking up speed",
     excerpt:
-      "Labellisée en 2019 et renouvelée pour 2026-2028, La French Tech Phnom Penh fédère un écosystème tech franco-cambodgien en pleine effervescence.",
+      "Labeled in 2019 and renewed for 2026-2028, La French Tech Phnom Penh brings together a fast-growing French–Cambodian tech ecosystem.",
     date: "2026-07-28",
     author: "La French Tech Phnom Penh",
-    category: "Écosystème",
+    category: "Ecosystem",
     readingTime: 4,
     cover: "/media/photos/phnompenh-skyline.jpg",
     sections: [
       {
         body: [
-          "Née en 2015 à l'initiative d'entrepreneurs français installés au Cambodge, La French Tech Phnom Penh est devenue en quelques années un point de ralliement pour les fondateurs, investisseurs et talents tech du Royaume. Officiellement labellisée « Communauté French Tech » en 2019 par la Mission French Tech, elle a vu son label renouvelé pour la période 2026-2028 — un signe de la maturité croissante de l'écosystème local.",
+          "Founded in 2015 by French entrepreneurs based in Cambodia, La French Tech Phnom Penh has become, in just a few years, a rallying point for founders, investors and tech talent in the Kingdom. Officially labeled a “French Tech Community” in 2019 by the French Tech Mission, it saw its label renewed for the 2026-2028 period — a sign of the growing maturity of the local ecosystem.",
         ],
       },
       {
-        heading: "Un réseau mondial, un ancrage local",
+        heading: "A global network, a local anchor",
         body: [
-          "La French Tech, c'est aujourd'hui plus de 125 communautés dans 57 pays. Phnom Penh en est le relais cambodgien : une association à but non lucratif, portée par des bénévoles, qui connecte les acteurs de l'innovation locale et les ouvre au réseau international.",
-          "Concrètement, la communauté rassemble une soixantaine de startups et organisations membres, présentes dans la fintech, la foodtech, l'IA, la cybersécurité, l'e-commerce, la logistique ou encore l'agritech.",
+          "La French Tech is today more than 125 communities across 57 countries. Phnom Penh is its Cambodian relay: a non-profit association, driven by volunteers, that connects local innovation players and opens them up to the international network.",
+          "In practice, the community gathers around sixty member startups and organizations — active in fintech, foodtech, AI, cybersecurity, e-commerce, logistics and agritech.",
         ],
       },
       {
-        heading: "Connecter, faire grandir, créer des ponts",
+        heading: "Connect, grow, build bridges",
         body: [
-          "Trois missions structurent l'action de la communauté. Connecter d'abord, à travers des soirées de networking, des Tech Talks et des ateliers ouverts à toutes les nationalités. Faire grandir ensuite, en apportant un accompagnement concret sur les sujets juridiques, fiscaux, de recrutement et de financement. Créer des ponts enfin, entre les startups françaises et les corporates cambodgiens, et entre l'écosystème local et le reste du réseau French Tech.",
-          "Le premier grand événement de la communauté, en juin 2026, a réuni plus de 150 participants autour de l'IA et des marchés émergents. Un signal fort à quelques mois du Sommet de la Francophonie, que le Cambodge accueillera en novembre 2026.",
+          "Three missions structure the community's work. Connect first, through networking evenings, Tech Talks and workshops open to all nationalities. Grow next, by providing concrete support on legal, tax, hiring and funding matters. Build bridges finally — between French startups and Cambodian corporates, and between the local ecosystem and the wider French Tech network.",
+          "The community's first flagship event, in June 2026, drew more than 150 attendees around AI and emerging markets. A strong signal a few months ahead of the Francophonie Summit, which Cambodia hosts in November 2026.",
         ],
       },
     ],
   },
   {
     slug: "entreprises-francaises-au-cambodge",
-    title: "Ces entreprises françaises qui misent sur le Cambodge",
+    title: "The French companies betting on Cambodia",
     excerpt:
-      "Plus de 200 entreprises françaises opèrent au Cambodge, de l'énergie à la banque en passant par la distribution. Panorama d'une présence qui s'ancre.",
+      "More than 200 French companies operate in Cambodia, from energy to banking and retail. A look at a footprint that keeps growing.",
     date: "2026-07-15",
     author: "La French Tech Phnom Penh",
     category: "Business",
@@ -56,60 +56,60 @@ export const articles: Article[] = [
     sections: [
       {
         body: [
-          "Le Cambodge compte aujourd'hui plus de 200 entreprises françaises, ce qui fait de la France l'un des partenaires économiques de référence du Royaume. En 2025, les échanges commerciaux bilatéraux ont atteint 568 millions de dollars, en hausse de près de 12 %.",
+          "Cambodia is now home to more than 200 French companies, making France one of the Kingdom's leading economic partners. In 2025, bilateral trade reached 568 million dollars, up nearly 12%.",
         ],
       },
       {
-        heading: "Des grands groupes bien installés",
+        heading: "Well-established large groups",
         body: [
-          "Dans l'énergie, TotalEnergies est présent de longue date. Côté banque, BRED Bank Cambodia porte les couleurs françaises dans un secteur financier en pleine modernisation. Dans l'hôtellerie, Accor et Sofitel opèrent plusieurs établissements à Phnom Penh et Siem Reap. La distribution, l'assurance et l'ingénierie complètent ce tableau.",
+          "In energy, TotalEnergies has a long-standing presence. In banking, BRED Bank Cambodia flies the French flag in a fast-modernizing financial sector. In hospitality, Accor and Sofitel operate several properties in Phnom Penh and Siem Reap. Retail, insurance and engineering round out the picture.",
         ],
       },
       {
-        heading: "Une nouvelle génération de startups",
+        heading: "A new generation of startups",
         body: [
-          "Au-delà des grands groupes, une génération de startups fondées par des entrepreneurs français ou franco-cambodgiens émerge : fintech, reverse logistics, foodtech anti-gaspillage, solutions data et IA. C'est précisément cet écosystème que La French Tech Phnom Penh fédère et met en relation avec les corporates et les investisseurs de la région.",
-          "Institutions et entreprises avancent ensemble : la CCI France Cambodge, l'Ambassade de France et Business France accompagnent l'implantation et le développement des acteurs français dans le pays.",
+          "Beyond the large groups, a generation of startups founded by French or French–Cambodian entrepreneurs is emerging: fintech, reverse logistics, anti-waste foodtech, data and AI solutions. This is precisely the ecosystem that La French Tech Phnom Penh brings together and connects with the region's corporates and investors.",
+          "Institutions and companies move forward together: CCI France Cambodge, the Embassy of France and Business France support the establishment and growth of French players in the country.",
         ],
       },
     ],
   },
   {
     slug: "sommet-francophonie-cambodge-2026",
-    title: "Le Sommet de la Francophonie 2026 à Phnom Penh : ce qu'il faut savoir",
+    title: "The 2026 Francophonie Summit in Phnom Penh: what to know",
     excerpt:
-      "Du 13 au 17 novembre 2026, le Cambodge accueille pour la première fois le Sommet de la Francophonie. Une occasion historique pour l'écosystème tech.",
+      "From 13 to 17 November 2026, Cambodia hosts the Francophonie Summit for the first time. A historic moment for the tech ecosystem.",
     date: "2026-06-30",
     author: "La French Tech Phnom Penh",
-    category: "Événement",
+    category: "Event",
     readingTime: 4,
     cover: "/media/events/koh-pich-cbd.jpg",
     sections: [
       {
         body: [
-          "Pour la deuxième fois seulement en Asie après Hanoï en 1997, le Sommet de la Francophonie se tiendra à Phnom Penh du 13 au 17 novembre 2026. Plus de 90 pays et gouvernements sont attendus, en présence de chefs d'État et de gouvernement, sous l'égide de l'Organisation Internationale de la Francophonie.",
+          "For only the second time in Asia after Hanoi in 1997, the Francophonie Summit will be held in Phnom Penh from 13 to 17 November 2026. More than 90 countries and governments are expected, with Heads of State and government, under the aegis of the Organisation Internationale de la Francophonie.",
         ],
       },
       {
-        heading: "100 000 visiteurs attendus",
+        heading: "100,000 visitors expected",
         body: [
-          "Cinq jours d'événements culmineront avec le 20ᵉ Sommet officiel les 15 et 16 novembre. Le Royaume attend plus de 100 000 visiteurs — l'un des plus grands événements internationaux jamais organisés par le Cambodge.",
+          "Five days of events will culminate with the official 20th Summit on 15 and 16 November. The Kingdom expects more than 100,000 visitors — one of the largest international events ever hosted by Cambodia.",
         ],
       },
       {
-        heading: "La tech au cœur du programme",
+        heading: "Tech at the heart of the programme",
         body: [
-          "Le volet économique et technologique du Sommet, FrancoTech, se tiendra à Koh Pich du 14 au 16 novembre. La French Tech Phnom Penh y disposera d'un pavillon dédié et y organisera ses propres événements : soirée des communautés internationales, business matching startups-investisseurs, tables rondes et réceptions.",
-          "Pour les startups et les entreprises, c'est une opportunité rare de connecter en un seul lieu délégations gouvernementales, dirigeants de grands groupes, investisseurs et acteurs de l'innovation du monde francophone et de l'Asie.",
+          "The Summit's economic and technology strand, FrancoTech, takes place at Koh Pich from 14 to 16 November. La French Tech Phnom Penh will run a dedicated pavilion and host its own events: an international communities evening, startup–investor business matching, roundtables and receptions.",
+          "For startups and companies, it is a rare opportunity to connect government delegations, executives of major groups, investors and innovation players from the Francophone world and Asia — all in one place.",
         ],
       },
     ],
   },
   {
     slug: "entreprendre-au-cambodge-guide",
-    title: "Entreprendre au Cambodge : le guide de démarrage",
+    title: "Doing business in Cambodia: the getting-started guide",
     excerpt:
-      "Création de société, fiscalité, recrutement, banque : les fondamentaux pour lancer son activité au Cambodge quand on est fondateur étranger.",
+      "Company formation, tax, hiring, banking: the essentials to launch your business in Cambodia as a foreign founder.",
     date: "2026-06-10",
     author: "La French Tech Phnom Penh",
     category: "Guide",
@@ -118,80 +118,80 @@ export const articles: Article[] = [
     sections: [
       {
         body: [
-          "Le Cambodge est l'une des économies les plus dynamiques de l'ASEAN, avec un PIB de près de 49 milliards de dollars en 2025 et une ouverture commerciale parmi les plus élevées de la région. Pour un fondateur étranger, le pays offre un cadre accessible — à condition d'en connaître les fondamentaux.",
+          "Cambodia is one of ASEAN's most dynamic economies, with a GDP of nearly 49 billion dollars in 2025 and one of the highest trade-openness ratios in the region. For a foreign founder, the country offers an accessible environment — provided you know the fundamentals.",
         ],
       },
       {
-        heading: "Créer sa société",
+        heading: "Setting up your company",
         body: [
-          "La forme la plus courante est la Private Limited Company, qui peut être détenue à 100 % par des étrangers dans la plupart des secteurs. L'immatriculation se fait en ligne via le guichet unique du gouvernement. Comptez quelques semaines et prévoyez un capital social minimal.",
+          "The most common structure is the Private Limited Company, which can be 100% foreign-owned in most sectors. Registration is done online through the government's single window. Allow a few weeks and plan for a minimum share capital.",
         ],
       },
       {
-        heading: "Fiscalité et banque",
+        heading: "Tax and banking",
         body: [
-          "Le dollar américain est utilisé partout, le riel servant pour les petites transactions. L'impôt sur les sociétés, la TVA et les obligations déclaratives mensuelles nécessitent un bon comptable local dès le départ. L'ouverture d'un compte professionnel est simple auprès des banques de la place, dont BRED Bank Cambodia.",
+          "The US dollar is used everywhere, with the riel serving for small transactions. Corporate income tax, VAT and monthly filing obligations call for a good local accountant from day one. Opening a business account is straightforward with local banks, including BRED Bank Cambodia.",
         ],
       },
       {
-        heading: "Recruter et s'entourer",
+        heading: "Hiring and surrounding yourself",
         body: [
-          "Le vivier de talents tech se structure rapidement, porté par des institutions comme la CADT. S'entourer de l'écosystème — chambres de commerce, communautés, mentors — accélère considérablement l'implantation. C'est l'un des rôles de La French Tech Phnom Penh : ouvrir son carnet d'adresses aux nouveaux arrivants.",
+          "The tech talent pool is structuring quickly, supported by institutions such as CADT. Surrounding yourself with the ecosystem — chambers of commerce, communities, mentors — dramatically accelerates your setup. That's one of the roles of La French Tech Phnom Penh: opening its address book to newcomers.",
         ],
       },
     ],
   },
   {
     slug: "francotech-vitrine-tech-francophonie",
-    title: "FrancoTech : la vitrine tech du Sommet de la Francophonie",
+    title: "FrancoTech: the tech showcase of the Francophonie Summit",
     excerpt:
-      "5 000 visiteurs, 110 exposants, 10 pavillons nationaux : FrancoTech est le rendez-vous économique et tech du Sommet. La French Tech y aura son pavillon.",
+      "5,000 visitors, 110 exhibitors, 10 national pavilions: FrancoTech is the Summit's economic and tech event. La French Tech will have its pavilion.",
     date: "2026-07-01",
     author: "La French Tech Phnom Penh",
-    category: "Événement",
+    category: "Event",
     readingTime: 3,
     cover: "/media/events/francotech-poster.jpg",
     sections: [
       {
         body: [
-          "FrancoTech est l'exposition phare, économique et technologique, du Sommet de la Francophonie. L'édition 2026, à Koh Pich du 14 au 16 novembre, réunira gouvernements, entreprises, investisseurs et startups de tout l'espace francophone : plus de 5 000 visiteurs, 110 exposants et une dizaine de pavillons nationaux sont attendus.",
+          "FrancoTech is the flagship economic and technology exhibition of the Francophonie Summit. The 2026 edition, at Koh Pich from 14 to 16 November, will bring together governments, companies, investors and startups from across the Francophone world: more than 5,000 visitors, 110 exhibitors and around ten national pavilions are expected.",
         ],
       },
       {
-        heading: "Le pavillon La French Tech",
+        heading: "The La French Tech pavilion",
         body: [
-          "La French Tech Phnom Penh y animera un pavillon dédié, mettant en avant l'innovation cambodgienne aux côtés des communautés French Tech d'Asie, avec un accès privilégié aux délégations officielles. Au programme : une table ronde thématique, des sessions de business matching et des rencontres avec les institutions.",
-          "Le thème retenu : « Scaling Across the Francophonie Network » — comment la French Tech permet aux startups de passer à l'échelle à l'international.",
+          "La French Tech Phnom Penh will run a dedicated pavilion, showcasing Cambodian innovation alongside the French Tech communities of Asia, with privileged access to official delegations. On the programme: a thematic roundtable, business matching sessions and meetings with institutions.",
+          "The chosen theme: “Scaling Across the Francophonie Network” — how French Tech enables startups to scale internationally.",
         ],
       },
     ],
   },
   {
     slug: "lever-des-fonds-au-cambodge",
-    title: "Lever des fonds au Cambodge : l'écosystème du financement",
+    title: "Raising funds in Cambodia: the financing ecosystem",
     excerpt:
-      "Business angels, fonds d'impact, capital-risque régional : tour d'horizon des sources de financement pour les startups au Cambodge.",
+      "Business angels, impact funds, regional venture capital: an overview of funding sources for startups in Cambodia.",
     date: "2026-05-20",
     author: "La French Tech Phnom Penh",
-    category: "Financement",
+    category: "Financing",
     readingTime: 5,
     cover: "/media/photos/phnompenh-night.jpg",
     sections: [
       {
         body: [
-          "L'écosystème cambodgien du financement se structure vite. Selon les bases de données sectorielles, le pays compte plus de 1 700 startups et un total cumulé de plus de 1,3 milliard de dollars levés, tous stades confondus. Les tickets d'amorçage restent modestes mais les opportunités se multiplient.",
+          "Cambodia's financing ecosystem is structuring fast. According to industry databases, the country has more than 1,700 startups and a cumulative total of over 1.3 billion dollars raised across all stages. Seed tickets remain modest, but opportunities are multiplying.",
         ],
       },
       {
-        heading: "Des acteurs locaux et régionaux",
+        heading: "Local and regional players",
         body: [
-          "Plusieurs fonds d'impact et véhicules d'investissement locaux, comme le Canadia Impact Fund, accompagnent les entrepreneurs cambodgiens. À l'échelle régionale, les investisseurs actifs en ASEAN — de Singapour à Tokyo — s'intéressent de plus en plus au Cambodge, notamment dans la fintech et la logistique.",
+          "Several local impact funds and investment vehicles, such as the Canadia Impact Fund, support Cambodian entrepreneurs. Regionally, investors active across ASEAN — from Singapore to Tokyo — are increasingly interested in Cambodia, notably in fintech and logistics.",
         ],
       },
       {
-        heading: "Le rôle de la communauté",
+        heading: "The community's role",
         body: [
-          "La French Tech Phnom Penh joue un rôle de mise en relation : ses sessions de business matching connectent les startups aux fonds, business angels et partenaires stratégiques. Le Sommet de la Francophonie 2026 offrira une occasion unique de rencontrer, en un seul lieu, investisseurs et corporates du monde francophone.",
+          "La French Tech Phnom Penh plays a matchmaking role: its business matching sessions connect startups with funds, business angels and strategic partners. The 2026 Francophonie Summit will offer a unique chance to meet investors and corporates from the Francophone world — all in one place.",
         ],
       },
     ],

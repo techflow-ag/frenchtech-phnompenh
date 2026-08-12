@@ -24,7 +24,7 @@ export async function generateMetadata({
 }
 
 function fmt(iso: string) {
-  return new Date(iso).toLocaleDateString("fr-FR", {
+  return new Date(iso).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -51,10 +51,10 @@ export default async function ArticlePage({
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-rouge hover:text-bleu"
             >
               <ArrowLeft className="h-4 w-4" />
-              Tous les articles
+              All articles
             </Link>
             <p className="eyebrow mt-6">
-              {article.category} · {article.readingTime} min de lecture
+              {article.category} · {article.readingTime} min read
             </p>
             <h1 className="display mt-3 text-4xl leading-tight text-ink md:text-5xl">
               {article.title}
@@ -104,7 +104,7 @@ export default async function ArticlePage({
       {/* More articles */}
       <section className="border-t border-line bg-mist">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-          <h2 className="display text-2xl text-ink">À lire aussi</h2>
+          <h2 className="display text-2xl text-ink">Read next</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {more.map((a, i) => (
               <Reveal key={a.slug} delay={i * 80} className="h-full">

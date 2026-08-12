@@ -26,7 +26,7 @@ export function WelcomeGuide() {
                 <RoosterMark className="h-7 w-7" />
               </div>
               <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                Ecosystem · Édition 2026
+                Ecosystem · 2026 Edition
               </p>
               <p className="mt-4 text-4xl font-extrabold leading-none text-white">
                 Welcome
@@ -37,8 +37,8 @@ export function WelcomeGuide() {
               </p>
               <span className="mt-6 block h-1 w-10 bg-rouge" />
               <p className="mt-4 text-xs leading-relaxed text-white/60">
-                Le guide d&apos;accueil de l&apos;écosystème tech cambodgien, pour
-                les entrepreneurs, startups, investisseurs et talents.
+                The onboarding guide to Cambodia&apos;s tech ecosystem — for
+                entrepreneurs, startups, investors and talent.
               </p>
             </div>
           </div>
@@ -47,14 +47,14 @@ export function WelcomeGuide() {
         {/* Form */}
         <div className="order-1 md:order-2">
           <Reveal>
-            <p className="eyebrow">Ressources</p>
+            <p className="eyebrow">Resources</p>
             <h2 className="display mt-3 text-4xl text-ink md:text-5xl">
-              Le Welcome Guide <span className="text-rouge">2026</span>
+              The Welcome Guide <span className="text-rouge">2026</span>
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft/80">
-              Réussir son atterrissage au Cambodge : créer sa société, visa et
-              banque, fiscalité, financement, recrutement, secteurs porteurs.
-              <strong className="text-ink"> Un guide édité par la communauté.</strong>
+              Land in Cambodia the right way: company formation, visa and banking,
+              tax, funding, hiring, high-potential sectors.
+              <strong className="text-ink"> A guide edited by the community.</strong>
             </p>
           </Reveal>
 
@@ -63,8 +63,8 @@ export function WelcomeGuide() {
               <div className="flex items-center gap-3 rounded-2xl border border-line bg-mist p-6">
                 <Check className="h-5 w-5 shrink-0 text-rouge" />
                 <p className="text-base text-ink">
-                  Merci ! Le guide arrive dans votre boîte mail. Bienvenue dans la
-                  communauté.
+                  Thank you! The guide is on its way to your inbox. Welcome to the
+                  community.
                 </p>
               </div>
             </Reveal>
@@ -75,45 +75,45 @@ export function WelcomeGuide() {
                 className="rounded-2xl bg-mist p-6 ring-1 ring-black/5 md:p-8"
               >
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <Field id="wg-first" label="Prénom" required />
-                  <Field id="wg-last" label="Nom" required />
+                  <Field id="wg-first" label="First name" required />
+                  <Field id="wg-last" label="Last name" required />
                   <div>
                     <label
                       htmlFor="wg-role"
                       className="text-xs font-semibold uppercase tracking-wider text-ink/60"
                     >
-                      Vous êtes
+                      You are
                     </label>
                     <select
                       id="wg-role"
                       className="mt-2 w-full rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-rouge"
                     >
-                      <option>Startup / fondateur</option>
-                      <option>Investisseur</option>
-                      <option>Entreprise / corporate</option>
-                      <option>Talent / étudiant</option>
+                      <option>Startup / founder</option>
+                      <option>Investor</option>
+                      <option>Company / corporate</option>
+                      <option>Talent / student</option>
                       <option>Institution</option>
                     </select>
                   </div>
-                  <Field id="wg-org" label="Organisation" />
+                  <Field id="wg-org" label="Organization" />
                   <Field id="wg-email" label="Email" type="email" required />
-                  <Field id="wg-phone" label="Téléphone" type="tel" />
+                  <Field id="wg-phone" label="Phone" type="tel" />
                 </div>
                 <label className="mt-5 flex items-start gap-3 text-sm text-ink-soft/80">
                   <input type="checkbox" required className="mt-1 accent-rouge" />
-                  J&apos;accepte de recevoir le guide et les communications de La
-                  French Tech Phnom Penh.
+                  I agree to receive the guide and communications from La French
+                  Tech Phnom Penh.
                 </label>
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <button
                     type="submit"
                     className="inline-flex items-center gap-2 rounded-full bg-rouge px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-bleu"
                   >
-                    Recevoir le guide
+                    Get the guide
                     <ArrowRight className="h-4 w-4" />
                   </button>
                   <span className="text-xs text-ink/50">
-                    PDF gratuit · édition 2026
+                    Free PDF · 2026 edition
                   </span>
                 </div>
               </form>
