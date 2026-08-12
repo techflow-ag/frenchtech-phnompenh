@@ -1,6 +1,6 @@
 import { CommunityMember } from "@/lib/types";
 
-// Member list — extend as the real directory grows.
+// Member list, extend as the real directory grows.
 // Sectors reflect the actual makeup of the community: fintech, foodtech, AI,
 // cybersecurity, blockchain, edtech, e-commerce, healthtech, logistics, VC, software.
 export const sectors = [

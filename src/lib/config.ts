@@ -1,4 +1,4 @@
-// External links & CTAs — replace placeholders with the real URLs before launch.
+// External links & CTAs, replace placeholders with the real URLs before launch.
 
 // Typeform (or any form) where startups apply to join the community.
 export const JOIN_FORM_URL = "https://form.typeform.com/to/XXXXXX";

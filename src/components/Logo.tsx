@@ -17,7 +17,7 @@ export function RoosterMark({ className = "h-10 w-10" }: { className?: string })
 
 export function Logo({ dark = false }: { dark?: boolean }) {
   return (
-    <Link href="/" className="flex items-center gap-3 group" aria-label="La French Tech Phnom Penh — Home">
+    <Link href="/" className="flex items-center gap-3 group" aria-label="La French Tech Phnom Penh, Home">
       <RoosterMark className="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:-rotate-6" />
       <span className="display text-[0.85rem] leading-[1.15] uppercase tracking-tight">
         <span className={dark ? "text-white" : "text-ink"}>

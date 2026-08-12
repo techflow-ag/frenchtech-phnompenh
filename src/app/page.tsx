@@ -23,7 +23,7 @@ const stats = [
   { value: "57", label: "Countries in the global French Tech network" },
 ];
 
-// France × Cambodia ecosystem — sourced figures (see /about for context).
+// France × Cambodia ecosystem, sourced figures (see /about for context).
 const ecosystem = [
   { value: "200+", label: "French companies operating in Cambodia" },
   { value: "$568M", label: "France–Cambodia two-way trade in 2025" },
@@ -33,7 +33,7 @@ const ecosystem = [
 const pillars = [
   {
     title: "Connect",
-    copy: "Monthly French Tech Connect nights, workshops, and panels bring together founders, investors, and tech talent — French, Cambodian, and international.",
+    copy: "Monthly French Tech Connect nights, workshops, and panels bring together founders, investors, and tech talent, French, Cambodian, and international.",
   },
   {
     title: "Grow",
@@ -74,7 +74,7 @@ export default function Home() {
             <Reveal delay={150}>
               <p className="mt-8 max-w-xl text-xl leading-relaxed text-ink-soft/80">
                 We connect French, Cambodian, and international founders,
-                investors, and tech talent — and build the bridge between the
+                investors, and tech talent, and build the bridge between the
                 French startup ecosystem and the Kingdom of Cambodia.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -123,7 +123,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Events"
             title="Coming up next"
-            intro="Free, in English, and open to everyone — whether you're French, Cambodian, or from anywhere else."
+            intro="Free, in English, and open to everyone, whether you're French, Cambodian, or from anywhere else."
           />
           <Link
             href="/events"
@@ -173,7 +173,7 @@ export default function Home() {
               A bridge between two ecosystems
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-white/70">
-              France is one of Cambodia&apos;s closest economic partners — and
+              France is one of Cambodia&apos;s closest economic partners, and
               the ties keep growing. This is the ground the community builds on.
             </p>
             <div className="mt-10 grid gap-px border border-line-dark bg-line-dark sm:grid-cols-3">
@@ -247,7 +247,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="The community"
           title="Real people, real events"
-          intro="Tech Talks, Apéro Tech nights, forums — this is what the ecosystem looks like in person."
+          intro="Tech Talks, Apéro Tech nights, forums, this is what the ecosystem looks like in person."
         />
         <div className="mt-12">
           <EventGallery
@@ -267,7 +267,7 @@ export default function Home() {
       {/* Press */}
       <PressSection />
 
-      {/* Francophonie Summit spotlight — French Tech Asia Forum */}
+      {/* Francophonie Summit spotlight, French Tech Asia Forum */}
       <section className="bg-bleu text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-[1.3fr_1fr] md:py-20">
           <Reveal>
@@ -276,7 +276,7 @@ export default function Home() {
               French Tech Asia Forum, at the Francophonie Summit
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80">
-              Cambodia hosts the 20th Sommet de la Francophonie — 90+ countries,
+              Cambodia hosts the 20th Sommet de la Francophonie, 90+ countries,
               100,000+ visitors. La French Tech Phnom Penh runs a dedicated
               pavilion at FrancoTech and a full week of events for founders,
               investors and communities from across the Francophone world.
@@ -302,7 +302,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/media/events/francotech-poster.jpg"
-                alt="French Tech Asia Forum — 14-17 November 2026, Phnom Penh"
+                alt="French Tech Asia Forum, 14-17 November 2026, Phnom Penh"
                 className="w-full object-cover"
               />
             </div>
@@ -321,7 +321,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="The board 2026–2028"
             title="Led by founders, for founders"
-            intro="Nine volunteers — entrepreneurs, operators, and investors building in Cambodia, co-chaired by Cédric Kang and Thierry Tea."
+            intro="Nine volunteers, entrepreneurs, operators, and investors building in Cambodia, co-chaired by Cédric Kang and Thierry Tea."
           />
         </div>
         <div className="mt-10 border border-line">
@@ -343,7 +343,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Welcome guide — email capture */}
+      {/* Welcome guide, email capture */}
       <WelcomeGuide />
 
       {/* Final CTA */}

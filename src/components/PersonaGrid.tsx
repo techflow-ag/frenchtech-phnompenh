@@ -5,7 +5,7 @@ import { Reveal } from "./Reveal";
 const personas = [
   {
     title: "You're an individual",
-    copy: "Founder, tech professional, student, or simply curious — our events are free and open to all, whatever your nationality or language.",
+    copy: "Founder, tech professional, student, or simply curious, our events are free and open to all, whatever your nationality or language.",
     cta: "Come to an event",
     href: "/events",
   },

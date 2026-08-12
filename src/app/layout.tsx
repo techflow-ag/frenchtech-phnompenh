@@ -58,15 +58,15 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://frenchtech-phnompenh.vercel.app"),
   title: {
-    default: "La French Tech Phnom Penh — The French Tech Community in Cambodia",
-    template: "%s — La French Tech Phnom Penh",
+    default: "La French Tech Phnom Penh, The French Tech Community in Cambodia",
+    template: "%s, La French Tech Phnom Penh",
   },
   description:
     "Official French Tech Community in Cambodia since 2019. We connect French, Cambodian, and international founders, investors, and tech talent in Phnom Penh.",
   openGraph: {
     title: "La French Tech Phnom Penh",
     description:
-      "The official French Tech Community in Cambodia — events, startups, investors, and the France–Cambodia tech ecosystem.",
+      "The official French Tech Community in Cambodia, events, startups, investors, and the France–Cambodia tech ecosystem.",
     locale: "en_US",
     type: "website",
   },

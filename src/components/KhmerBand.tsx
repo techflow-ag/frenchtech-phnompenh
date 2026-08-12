@@ -1,5 +1,5 @@
 // Signature element: a slow marquee alternating "Phnom Penh" in Khmer script
-// and "La French Tech" — the meeting of the two cultures the community bridges.
+// and "La French Tech", the meeting of the two cultures the community bridges.
 const items = ["ភ្នំពេញ", "La French Tech", "ភ្នំពេញ", "Cambodge", "ភ្នំពេញ", "La French Tech", "ភ្នំពេញ", "Cambodia"];
 
 export function KhmerBand() {

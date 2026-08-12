@@ -40,7 +40,7 @@ export function Header() {
             );
           })}
           <Link
-            href="/contact#join"
+            href="/contact"
             className="display bg-rouge px-5 py-2.5 text-xs text-white transition-colors hover:bg-bleu"
           >
             Join us
@@ -72,7 +72,7 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/contact#join"
+            href="/contact"
             onClick={() => setOpen(false)}
             className="display mt-4 block bg-rouge px-5 py-3 text-center text-xs text-white"
           >

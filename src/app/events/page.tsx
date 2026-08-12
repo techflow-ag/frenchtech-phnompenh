@@ -25,7 +25,7 @@ export default function EventsPage() {
         eyebrow="Events"
         title="Meet the community"
         khmer="ព្រឹត្តិការណ៍"
-        intro="From our monthly French Tech Connect networking nights to hands-on workshops and panels — our events are free, in English, and open to everyone."
+        intro="From our monthly French Tech Connect networking nights to hands-on workshops and panels, our events are free, in English, and open to everyone."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
@@ -73,7 +73,7 @@ export default function EventsPage() {
             <h2 className="display text-2xl">Want to host or speak?</h2>
             <p className="mt-2 max-w-xl text-sm text-white/70">
               We&apos;re always looking for venues, speakers, and event
-              partners. If you have a space, a story, or a topic — talk to us.
+              partners. If you have a space, a story, or a topic, talk to us.
             </p>
           </Reveal>
           <Reveal delay={120}>

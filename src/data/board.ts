@@ -63,7 +63,7 @@ export const boardMembers: BoardMember[] = [
   {
     name: "Eva Berlinson",
     role: "Board Member",
-    title: "Canadia Impact Fund — OCIC Group",
+    title: "Canadia Impact Fund, OCIC Group",
     photo: "/images/board/eva-berlinson.jpg",
     linkedin: "https://kh.linkedin.com/in/eva-berlinson",
   },

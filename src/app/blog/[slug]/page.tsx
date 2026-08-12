@@ -61,8 +61,8 @@ export default async function ArticlePage({
         </Reveal>
       </div>
 
-      <article className="mx-auto grid max-w-6xl gap-12 px-5 py-8 md:grid-cols-[2fr_1fr] md:py-12">
-        {/* Body — ~66% width */}
+      <article className="mx-auto grid max-w-6xl gap-12 px-5 py-8 md:grid-cols-[3fr_1fr] md:py-12">
+        {/* Body, ~66% width */}
         <div className="min-w-0">
           <Reveal>
             <p className="eyebrow">

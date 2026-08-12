@@ -13,7 +13,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 export const metadata: Metadata = {
   title: "Partners & Sponsors",
   description:
-    "The institutions, corporates, and sponsors supporting La French Tech Phnom Penh — and how to become one of them.",
+    "The institutions, corporates, and sponsors supporting La French Tech Phnom Penh, and how to become one of them.",
 };
 
 const tierLabels: Record<string, string> = {
@@ -32,7 +32,7 @@ export default function PartnersPage() {
         eyebrow="Partners & sponsors"
         title="They support the community"
         khmer="ដៃគូ"
-        intro="Institutions, corporates, and sponsors make our events and programs possible — and get privileged access to the France–Cambodia tech ecosystem in return."
+        intro="Institutions, corporates, and sponsors make our events and programs possible, and get privileged access to the France–Cambodia tech ecosystem in return."
       />
 
       {tiers.map((tier) => {
@@ -84,7 +84,7 @@ export default function PartnersPage() {
           <SectionHeading
             eyebrow="The ecosystem"
             title="French companies already in Cambodia"
-            intro="Energy, banking, retail, telecoms — French business is woven into the Kingdom's economy. Our members are the startups writing its next chapter."
+            intro="Energy, banking, retail, telecoms, French business is woven into the Kingdom's economy. Our members are the startups writing its next chapter."
             align="center"
           />
           <div className="mt-12">
@@ -102,7 +102,7 @@ export default function PartnersPage() {
           <SectionHeading
             eyebrow="Become a partner"
             title="Why partner with us"
-            intro="Concrete ways corporates, institutions, and funds work with the community — especially in the lead-up to the Francophonie Summit in Phnom Penh, November 2026."
+            intro="Concrete ways corporates, institutions, and funds work with the community, especially in the lead-up to the Francophonie Summit in Phnom Penh, November 2026."
             dark
           />
           <div className="mt-12 grid gap-px border border-line-dark bg-line-dark sm:grid-cols-2">

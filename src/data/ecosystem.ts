@@ -1,4 +1,4 @@
-// The French Tech Phnom Penh ecosystem — members, partners and supporters.
+// The French Tech Phnom Penh ecosystem, members, partners and supporters.
 // A multi-sector community: fintech, AI, proptech, edtech, cybersecurity,
 // e-commerce, robotics, agritech, media, institutions.
 export const ecosystemPartners: { name: string; logo: string }[] = [
@@ -36,7 +36,7 @@ export const ecosystemPartners: { name: string; logo: string }[] = [
   { name: "MHC Mobile Health Care", logo: "/images/community-partners/mhc.png" },
 ];
 
-// French & French-linked companies with a presence in Cambodia — logo wall.
+// French & French-linked companies with a presence in Cambodia, logo wall.
 export const cambodiaLogos: { name: string; logo: string }[] = [
   { name: "TotalEnergies", logo: "/images/partners/totalenergies.png" },
   { name: "Decathlon", logo: "/images/partners/decathlon.png" },

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const timeline = [
   {
     year: "2013",
-    text: "La French Tech is launched by the French government — a global movement to support and promote French tech entrepreneurship worldwide.",
+    text: "La French Tech is launched by the French government, a global movement to support and promote French tech entrepreneurship worldwide.",
   },
   {
     year: "2015",
@@ -36,7 +36,7 @@ const timeline = [
 const values = [
   {
     title: "Open to all",
-    copy: "French, Cambodian, or any other nationality — French-speaking or not. Our events are free and everyone is welcome.",
+    copy: "French, Cambodian, or any other nationality, French-speaking or not. Our events are free and everyone is welcome.",
   },
   {
     title: "Volunteer-driven",
@@ -44,7 +44,7 @@ const values = [
   },
   {
     title: "Locally rooted, globally connected",
-    copy: "We reflect Cambodia's ecosystem while carrying the French Tech label — a network of 100+ communities in 57 countries.",
+    copy: "We reflect Cambodia's ecosystem while carrying the French Tech label, a network of 100+ communities in 57 countries.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
         eyebrow="Who we are"
         title="About us"
         khmer="អំពីយើង"
-        intro="La French Tech Phnom Penh is the official French Tech Community in Cambodia — a volunteer-driven, non-profit collective bridging the French and Cambodian entrepreneurial ecosystems."
+        intro="La French Tech Phnom Penh is the official French Tech Community in Cambodia, a volunteer-driven, non-profit collective bridging the French and Cambodian entrepreneurial ecosystems."
       />
 
       {/* Story / timeline */}
@@ -97,7 +97,7 @@ export default function AboutPage() {
               className="h-auto w-full"
             />
             <figcaption className="mt-3 text-sm text-ink/60">
-              The community gathering in Phnom Penh — 2026.
+              The community gathering in Phnom Penh, 2026.
             </figcaption>
           </figure>
         </Reveal>
@@ -145,12 +145,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Board — group photos (individual portraits live on the homepage) */}
+      {/* Board, group photos (individual portraits live on the homepage) */}
       <section id="board" className="mx-auto max-w-5xl scroll-mt-20 px-5 py-20 md:py-28">
         <SectionHeading
           eyebrow="The board 2026–2028"
           title="A new board takes office"
-          intro="Nine volunteers took office in March 2026, on the International Day of Francophonie — five women and four men, all building in Cambodia."
+          intro="Nine volunteers took office in March 2026, on the International Day of Francophonie, five women and four men, all building in Cambodia."
         />
         <Reveal className="mt-10">
           <figure>
@@ -161,7 +161,7 @@ export default function AboutPage() {
               className="h-auto w-full"
             />
             <figcaption className="mt-3 text-sm text-ink/60">
-              The 2026–2028 board — Phnom Penh, March 2026.
+              The 2026–2028 board, Phnom Penh, March 2026.
             </figcaption>
           </figure>
         </Reveal>

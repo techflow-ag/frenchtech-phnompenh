@@ -13,7 +13,7 @@ const OPTIONS = [
   },
   {
     id: "francotech-2026",
-    label: "FrancoTech — French Tech Pavilion",
+    label: "FrancoTech, French Tech Pavilion",
     when: "14–16 Nov",
   },
   {
@@ -82,7 +82,7 @@ export function EventRegisterForm() {
       <div>
         <h2 className="display text-xl text-ink">Which events interest you?</h2>
         <p className="mt-2 text-sm text-ink-soft/80">
-          Select all that apply — we&apos;ll follow up with practical details.
+          Select all that apply, we&apos;ll follow up with practical details.
         </p>
         <div className="mt-6 space-y-3">
           {OPTIONS.map((o) => {

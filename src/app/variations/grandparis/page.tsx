@@ -9,7 +9,7 @@ import { Quote } from "@/components/Quote";
 import { PressSection } from "@/components/PressSection";
 
 export const metadata: Metadata = {
-  title: "Homepage — Grand Paris style",
+  title: "Homepage, Grand Paris style",
   robots: { index: false },
 };
 
@@ -23,7 +23,7 @@ const ecosystem = [
 const programmes = [
   {
     title: "Connect",
-    copy: "French Tech Connect, workshops and roundtables every month — founders, investors and talent.",
+    copy: "French Tech Connect, workshops and roundtables every month, founders, investors and talent.",
   },
   {
     title: "Grow",
@@ -167,7 +167,7 @@ export default function GrandParisHome() {
         </div>
       </section>
 
-      {/* Programmes — navy */}
+      {/* Programmes, navy */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
           <Reveal>
@@ -248,7 +248,7 @@ export default function GrandParisHome() {
         <Quote />
       </section>
 
-      {/* Join — navy persona cards */}
+      {/* Join, navy persona cards */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
           <Reveal>

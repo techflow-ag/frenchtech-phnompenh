@@ -16,7 +16,7 @@ import { PressSection } from "@/components/PressSection";
 import { FinalCTA } from "@/components/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Homepage — Aerial",
+  title: "Homepage, Aerial",
   robots: { index: false },
 };
 
@@ -37,7 +37,7 @@ const pillars = [
   {
     n: "01",
     title: "Connect",
-    copy: "Monthly French Tech Connect nights, workshops, and panels — French, Cambodian, and international.",
+    copy: "Monthly French Tech Connect nights, workshops, and panels, French, Cambodian, and international.",
   },
   {
     n: "02",
@@ -91,7 +91,7 @@ export default function AerialHome() {
           <Reveal delay={240}>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
               We connect French, Cambodian, and international founders, investors,
-              and tech talent — and build the bridge between the French startup
+              and tech talent, and build the bridge between the French startup
               ecosystem and the Kingdom of Cambodia.
             </p>
           </Reveal>
@@ -207,7 +207,7 @@ export default function AerialHome() {
               A bridge between <em className="italic">two ecosystems.</em>
             </h2>
             <p className="mt-6 max-w-md font-sans text-lg leading-relaxed text-white/70">
-              France is one of Cambodia&apos;s closest economic partners — and the
+              France is one of Cambodia&apos;s closest economic partners, and the
               ties keep growing. This is the ground the community builds on.
             </p>
             <div className="mt-10 grid gap-px border border-line-dark bg-line-dark sm:grid-cols-3">

@@ -1,13 +1,13 @@
 import { Sponsor } from "@/lib/types";
 
-// PLACEHOLDER DATA — replace with real sponsors and their logos in /public/images/partners/
+// PLACEHOLDER DATA, replace with real sponsors and their logos in /public/images/partners/
 export const sponsors: Sponsor[] = [
   {
     name: "CCI France Cambodge",
     tier: "institutional",
     logo: "/images/partners/ccifc.png",
     website: "https://www.ccifcambodge.org",
-    description: "French Chamber of Commerce in Cambodia — our host institution.",
+    description: "French Chamber of Commerce in Cambodia, our host institution.",
   },
   {
     name: "Embassy of France in Cambodia",
@@ -39,7 +39,7 @@ export const partnershipExamples = [
   {
     title: "Access talent & startups",
     description:
-      "Meet vetted startups for pilots, partnerships, and investment — before anyone else.",
+      "Meet vetted startups for pilots, partnerships, and investment, before anyone else.",
   },
   {
     title: "Support the Francophonie momentum",

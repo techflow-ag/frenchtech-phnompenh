@@ -37,7 +37,7 @@ export function WelcomeGuide() {
               </p>
               <span className="mt-6 block h-1 w-10 bg-rouge" />
               <p className="mt-4 text-xs leading-relaxed text-white/60">
-                The onboarding guide to Cambodia&apos;s tech ecosystem — for
+                The onboarding guide to Cambodia&apos;s tech ecosystem, for
                 entrepreneurs, startups, investors and talent.
               </p>
             </div>

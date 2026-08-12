@@ -23,7 +23,7 @@ export function PressSection() {
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft/80">
               From the Cambodian press to the ecosystem&apos;s own outlets, the
-              community makes the news — labelling, board, events.
+              community makes the news, labelling, board, events.
             </p>
           </Reveal>
         </div>

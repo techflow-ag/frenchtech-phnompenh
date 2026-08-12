@@ -10,7 +10,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with La French Tech Phnom Penh — join as a member, list your startup, become a partner, or propose an event.",
+    "Get in touch with La French Tech Phnom Penh, join as a member, list your startup, become a partner, or propose an event.",
 };
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's talk"
         khmer="ទំនាក់ទំនង"
-        intro="Whether you want to join, partner, speak, or just say bonjour — we read everything and answer fast."
+        intro="Whether you want to join, partner, speak, or just say bonjour, we read everything and answer fast."
       />
 
       <section id="join" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-16 md:py-20">

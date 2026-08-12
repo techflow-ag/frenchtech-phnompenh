@@ -12,7 +12,7 @@ import { ecosystemPartners } from "@/data/ecosystem";
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "The startups, companies, and organizations of La French Tech Phnom Penh — fintech, foodtech, AI, cybersecurity, e-commerce, and more.",
+    "The startups, companies, and organizations of La French Tech Phnom Penh, fintech, foodtech, AI, cybersecurity, e-commerce, and more.",
 };
 
 export default function CommunityPage() {
@@ -22,7 +22,7 @@ export default function CommunityPage() {
         eyebrow="Community"
         title="The members"
         khmer="សហគមន៍"
-        intro="60+ startups, companies, and organizations make up the community — from fintech and foodtech to AI, cybersecurity, logistics, and investment."
+        intro="60+ startups, companies, and organizations make up the community, from fintech and foodtech to AI, cybersecurity, logistics, and investment."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
@@ -35,7 +35,7 @@ export default function CommunityPage() {
           <SectionHeading
             eyebrow="Our ecosystem"
             title="Members, partners & supporters"
-            intro="A multi-sector community spanning fintech, AI, proptech, edtech, cybersecurity, e-commerce, robotics, agritech and media — with the institutions that back it."
+            intro="A multi-sector community spanning fintech, AI, proptech, edtech, cybersecurity, e-commerce, robotics, agritech and media, with the institutions that back it."
             align="center"
           />
           <div className="mt-12">

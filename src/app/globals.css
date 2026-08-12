@@ -83,7 +83,7 @@ body {
   );
 }
 
-/* Scroll & load reveal — premium blur-rise, staggered */
+/* Scroll & load reveal, premium blur-rise, staggered */
 .reveal {
   opacity: 0;
   transform: translateY(22px);

@@ -14,7 +14,7 @@ import { PressSection } from "@/components/PressSection";
 import { FinalCTA } from "@/components/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Homepage — Editorial",
+  title: "Homepage, Editorial",
   robots: { index: false },
 };
 
@@ -34,7 +34,7 @@ const ecosystem = [
 const pillars = [
   {
     title: "Connect",
-    copy: "Monthly French Tech Connect nights, workshops, and panels — French, Cambodian, and international.",
+    copy: "Monthly French Tech Connect nights, workshops, and panels, French, Cambodian, and international.",
   },
   {
     title: "Grow",
@@ -51,7 +51,7 @@ export default function EditorialHome() {
 
   return (
     <div className="font-grotesk bg-paper">
-      {/* Hero — split with past-event photo */}
+      {/* Hero, split with past-event photo */}
       <section className="border-b-2 border-ink">
         <div className="mx-auto grid max-w-6xl items-stretch gap-0 md:grid-cols-2">
           <div className="px-5 pb-12 pt-14 md:pb-16 md:pr-10 md:pt-20">
@@ -70,8 +70,8 @@ export default function EditorialHome() {
             <Reveal delay={240}>
               <p className="mt-8 max-w-md text-lg leading-relaxed text-ink">
                 The official French Tech community in Cambodia. We connect founders,
-                investors, and tech talent — French, Cambodian, and everyone in
-                between — and wire Phnom Penh into a global network of 100+ communities.
+                investors, and tech talent, French, Cambodian, and everyone in
+                between, and wire Phnom Penh into a global network of 100+ communities.
               </p>
             </Reveal>
             <Reveal delay={360}>
@@ -246,7 +246,7 @@ export default function EditorialHome() {
       {/* Press */}
       <PressSection />
 
-      {/* Board — 4 per row mosaic */}
+      {/* Board, 4 per row mosaic */}
       <section className="border-b-2 border-ink bg-ink text-white">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
           <Reveal>

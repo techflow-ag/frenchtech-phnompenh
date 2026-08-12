@@ -32,7 +32,7 @@ export function Footer() {
         <div>
           <Logo dark />
           <p className="mt-6 max-w-sm text-base leading-relaxed text-white/70">
-            The official French Tech Community in Cambodia — part of a global
+            The official French Tech Community in Cambodia, part of a global
             network of 100+ communities in 57 countries, driven by volunteers
             and labeled by the French Tech Mission.
           </p>

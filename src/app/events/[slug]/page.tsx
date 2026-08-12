@@ -60,7 +60,7 @@ export default async function EventPage({ params }: PageProps<"/events/[slug]">)
         </Reveal>
       </div>
 
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-10 md:grid-cols-[2fr_1fr] md:py-14">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-10 md:grid-cols-[3fr_1fr] md:py-14">
         {/* Content */}
         <div>
           <Reveal>
