@@ -2,20 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { articles, getArticle } from "@/data/blog";
+import { getArticle, listArticles, listArticleSlugs } from "@/lib/articles";
+import { ArticleBody } from "@/components/ArticleBody";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
 import { JOIN_FORM_URL } from "@/lib/config";
 
-export function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const slugs = await listArticleSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PageProps<"/blog/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const a = getArticle(slug);
+  const a = await getArticle(slug);
   if (!a) return {};
   return {
     title: a.title,
@@ -42,10 +44,10 @@ export default async function ArticlePage({
   params,
 }: PageProps<"/blog/[slug]">) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle(slug);
   if (!article) notFound();
 
-  const more = articles.filter((a) => a.slug !== slug).slice(0, 3);
+  const more = (await listArticles()).filter((a) => a.slug !== slug).slice(0, 3);
 
   return (
     <>
@@ -62,7 +64,7 @@ export default async function ArticlePage({
       </div>
 
       <article className="mx-auto grid max-w-6xl gap-12 px-5 py-8 md:grid-cols-[3fr_1fr] md:py-12">
-        {/* Body, ~66% width */}
+        {/* Body */}
         <div className="min-w-0">
           <Reveal>
             <p className="eyebrow">
@@ -87,25 +89,9 @@ export default async function ArticlePage({
             </div>
           </Reveal>
 
-          <div className="mt-10">
-            {article.sections.map((s, i) => (
-              <Reveal key={i} className="mb-8">
-                {s.heading && (
-                  <h2 className="display mb-4 mt-4 text-2xl text-ink">
-                    {s.heading}
-                  </h2>
-                )}
-                {s.body.map((p, j) => (
-                  <p
-                    key={j}
-                    className="mb-4 text-lg leading-relaxed text-ink-soft/90"
-                  >
-                    {p}
-                  </p>
-                ))}
-              </Reveal>
-            ))}
-          </div>
+          <Reveal className="mt-10">
+            <ArticleBody node={article.content.node} />
+          </Reveal>
         </div>
 
         {/* Sticky CTA */}
@@ -135,21 +121,23 @@ export default async function ArticlePage({
               >
                 Register for events
               </Link>
-              <div className="mt-6 border-t border-line pt-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-ink/50">
-                  Topics
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {article.keywords.slice(0, 4).map((k) => (
-                    <span
-                      key={k}
-                      className="rounded-full border border-line px-2.5 py-1 text-xs text-ink/60"
-                    >
-                      {k}
-                    </span>
-                  ))}
+              {article.keywords.length > 0 && (
+                <div className="mt-6 border-t border-line pt-6">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-ink/50">
+                    Topics
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {article.keywords.slice(0, 4).map((k) => (
+                      <span
+                        key={k}
+                        className="rounded-full border border-line px-2.5 py-1 text-xs text-ink/60"
+                      >
+                        {k}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </aside>

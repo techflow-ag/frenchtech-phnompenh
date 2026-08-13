@@ -9,8 +9,6 @@ import {
   Montserrat,
 } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -56,7 +54,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://frenchtech-phnompenh.vercel.app"),
+  metadataBase: new URL("https://lafrenchtech-cambodge.com"),
   title: {
     default: "La French Tech Phnom Penh, The French Tech Community in Cambodia",
     template: "%s, La French Tech Phnom Penh",
@@ -78,11 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${archivo.variable} ${instrument.variable} ${notoKhmer.variable} ${fraunces.variable} ${spaceGrotesk.variable} ${plexMono.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }

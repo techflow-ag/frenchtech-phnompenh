@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { articles } from "@/data/blog";
+import { listArticles } from "@/lib/articles";
 import { PageHero } from "@/components/PageHero";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
@@ -20,7 +20,8 @@ function fmt(iso: string) {
   });
 }
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const articles = await listArticles();
   const [lead, ...rest] = articles;
 
   return (
@@ -29,44 +30,44 @@ export default function BlogPage() {
         eyebrow="Newsroom"
         title="Newsroom"
         khmer="ព័ត៌មាន"
-        intro="Analysis, guides and news from the French–Cambodian tech ecosystem."
+        intro="Analysis, guides and news from the French-Cambodian tech ecosystem."
       />
 
-      {/* Lead article */}
-      <section className="mx-auto max-w-6xl px-5 py-16">
-        <Reveal>
-          <Link
-            href={`/blog/${lead.slug}`}
-            className="group grid gap-8 overflow-hidden rounded-3xl ring-1 ring-black/5 md:grid-cols-2"
-          >
-            <div className="aspect-[16/10] overflow-hidden md:aspect-auto">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={lead.cover}
-                alt={lead.title}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="flex flex-col justify-center p-6 md:p-10">
-              <p className="text-xs font-semibold uppercase tracking-wide text-rouge">
-                {lead.category} · {lead.readingTime} min
-              </p>
-              <h2 className="display mt-3 text-2xl text-ink md:text-4xl">
-                {lead.title}
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-ink-soft/80">
-                {lead.excerpt}
-              </p>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-rouge">
-                Read the article
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
-            </div>
-          </Link>
-        </Reveal>
-      </section>
+      {lead && (
+        <section className="mx-auto max-w-6xl px-5 py-16">
+          <Reveal>
+            <Link
+              href={`/blog/${lead.slug}`}
+              className="group grid gap-8 overflow-hidden rounded-3xl ring-1 ring-black/5 md:grid-cols-2"
+            >
+              <div className="aspect-[16/10] overflow-hidden md:aspect-auto">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={lead.cover}
+                  alt={lead.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-6 md:p-10">
+                <p className="text-xs font-semibold uppercase tracking-wide text-rouge">
+                  {lead.category} · {lead.readingTime} min
+                </p>
+                <h2 className="display mt-3 text-2xl text-ink md:text-4xl">
+                  {lead.title}
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-ink-soft/80">
+                  {lead.excerpt}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-rouge">
+                  Read the article
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+            </Link>
+          </Reveal>
+        </section>
+      )}
 
-      {/* Grid */}
       <section className="mx-auto max-w-6xl px-5 pb-20">
         <div className="grid gap-8 md:grid-cols-3">
           {rest.map((a, i) => (
