@@ -1,17 +1,15 @@
 import { config, fields, collection } from "@keystatic/core";
 
-// GitHub-backed editing once the GitHub App env vars are set (editors publish to
-// the repo, which redeploys the site). Falls back to local file editing otherwise,
-// so the build works and `npm run dev` edits local files.
-const storage = process.env.KEYSTATIC_GITHUB_CLIENT_ID
-  ? ({
-      kind: "github",
-      repo: { owner: "techflow-ag", name: "frenchtech-phnompenh" },
-    } as const)
-  : ({ kind: "local" } as const);
+// Local file editing in dev; Keystatic Cloud in production so association editors
+// log in by email and publish online (Cloud commits to the repo -> Vercel redeploys).
+const storage =
+  process.env.NODE_ENV === "development"
+    ? ({ kind: "local" } as const)
+    : ({ kind: "cloud" } as const);
 
 export default config({
   storage,
+  cloud: { project: "techflow-ag/frenchtech-phnompenh" },
   ui: {
     brand: { name: "La French Tech Phnom Penh" },
   },
