@@ -88,18 +88,22 @@ export function Footer() {
             © {new Date().getFullYear()} La French Tech Phnom Penh. A
             volunteer-driven, non-profit community.
           </p>
-          <p className="flex items-center gap-2">
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span lang="km" className="font-khmer">
               សហគមន៍បច្ចេកវិទ្យាបារាំងនៅភ្នំពេញ
             </span>
-            <a
-              href="https://icons8.com"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="text-white/30 hover:text-white/50"
-            >
-              Flag icon · Icons8
-            </a>
+            <span>
+              All Rights Reserved © Made with{" "}
+              <span className="text-rouge">❤</span> By{" "}
+              <a
+                href="https://techflow-agency.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 underline hover:text-white"
+              >
+                TechFlow
+              </a>
+            </span>
           </p>
         </div>
       </div>

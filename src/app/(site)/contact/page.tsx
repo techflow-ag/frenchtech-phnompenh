@@ -53,9 +53,9 @@ export default function ContactPage() {
                 <h2 className="eyebrow">Where we are</h2>
                 <p className="mt-2 flex items-start gap-2 text-sm font-medium text-ink">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-rouge" />
-                  Hosted by CCI France Cambodge
+                  Connexion Building, Koh Pich,
                   <br />
-                  Phnom Penh, Cambodia
+                  Sangkat Tonle Bassac, Phnom Penh, Cambodia
                 </p>
               </div>
               <div className="border border-line bg-mist p-6">

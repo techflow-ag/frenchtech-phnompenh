@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { upcomingEvents } from "@/data/events";
-import { boardMembers } from "@/data/board";
+import { getUpcomingEvents } from "@/lib/events";
+import { getBoardMembers } from "@/lib/board";
 import { cambodiaLogos } from "@/data/ecosystem";
 import { Reveal } from "@/components/Reveal";
 import { LogoWall } from "@/components/LogoWall";
@@ -46,8 +46,9 @@ const pillars = [
   },
 ];
 
-export default function EditorialHome() {
-  const upcoming = upcomingEvents().slice(0, 3);
+export default async function EditorialHome() {
+  const [upcomingAll, boardMembers] = await Promise.all([getUpcomingEvents(), getBoardMembers()]);
+  const upcoming = upcomingAll.slice(0, 3);
 
   return (
     <div className="font-grotesk bg-paper">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { upcomingEvents, pastEvents } from "@/data/events";
+import { getUpcomingEvents, getPastEvents } from "@/lib/events";
 import { EventCard } from "@/components/EventCard";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -15,9 +15,8 @@ export const metadata: Metadata = {
     "Upcoming and past events of La French Tech Phnom Penh: French Tech Connect networking nights, workshops, and panels. Free and open to all.",
 };
 
-export default function EventsPage() {
-  const upcoming = upcomingEvents();
-  const past = pastEvents();
+export default async function EventsPage() {
+  const [upcoming, past] = await Promise.all([getUpcomingEvents(), getPastEvents()]);
 
   return (
     <>

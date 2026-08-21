@@ -1,0 +1,35 @@
+title: "FrancoTech, The French Tech Pavilion"
+status: published
+featured: true
+date: "2026-11-14T09:00:00+07:00"
+endDate: "2026-11-16T18:00:00+07:00"
+endTime: ""
+venue: "Koh Pich Expo, Phnom Penh"
+city: "Phnom Penh"
+description: "FrancoTech is the flagship economic and technology exhibition of the Francophonie Summit. La French Tech Phnom Penh runs a dedicated pavilion, a roundtable panel and business matching sessions."
+image: "/media/events/koh-pich-cbd.jpg"
+registrationUrl: "/events/register"
+tags:
+  - "Exhibition"
+  - "FrancoTech"
+longDescription:
+  - "FrancoTech is the flagship economic and technology exhibition of the Francophonie Summit. It brings together governments, companies, investors and startups from across the Francophone world to foster business and innovation with Cambodia and ASEAN. Held at Koh Pich from 14 to 16 November, the 2026 edition expects 5,000+ visitors, 110+ exhibitors and 10+ national pavilions."
+  - "La French Tech Phnom Penh has a dedicated pavilion, showcasing Cambodian innovation alongside French Tech partners from across Asia, with access to official government and institutional delegations."
+  - "Our theme: “Scaling Across the Francophonie Network, How French Tech enables global scale for startups.” We also host a roundtable panel and business matching sessions connecting startups, investors and corporates."
+stats:
+  - value: "5,000+"
+    label: "Visitors"
+  - value: "110+"
+    label: "Exhibitors"
+  - value: "10+"
+    label: "National pavilions"
+agenda:
+  - when: "Pavilion"
+    title: "The French Tech Pavilion"
+    detail: "Cambodian innovation alongside French Tech partners from across Asia."
+  - when: "Roundtable"
+    title: "Scaling Across the Francophonie Network"
+    detail: "Our dedicated panel, joining seven institution-led themes: AI, digital government, fintech, agritech, edtech, tourism and women in innovation."
+  - when: "Business matching"
+    title: "B2B & investor matching sessions"
+    detail: "French community meetups, local ecosystem meetups and Francophone delegation business meetings."

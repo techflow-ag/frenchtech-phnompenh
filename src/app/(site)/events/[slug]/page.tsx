@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, MapPin } from "lucide-react";
-import { events, getEvent } from "@/data/events";
+import { getEventBySlug, getEventSlugs } from "@/lib/events";
 import { Reveal } from "@/components/Reveal";
 
-export function generateStaticParams() {
-  return events.map((e) => ({ slug: e.slug }));
+export async function generateStaticParams() {
+  return (await getEventSlugs()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PageProps<"/events/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const e = getEvent(slug);
+  const e = await getEventBySlug(slug);
   if (!e) return {};
   return {
     title: e.title,
@@ -41,7 +41,7 @@ function dateRange(start: string, end?: string) {
 
 export default async function EventPage({ params }: PageProps<"/events/[slug]">) {
   const { slug } = await params;
-  const event = getEvent(slug);
+  const event = await getEventBySlug(slug);
   if (!event) notFound();
 
   const isUpcoming = new Date(event.endDate ?? event.date) >= new Date();

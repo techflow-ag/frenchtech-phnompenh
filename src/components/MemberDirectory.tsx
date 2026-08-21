@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { communityMembers, sectors } from "@/data/members";
+import { CommunityMember } from "@/lib/types";
 
 function initials(name: string) {
   return name
@@ -12,12 +12,18 @@ function initials(name: string) {
     .join("");
 }
 
-export function MemberDirectory() {
+export function MemberDirectory({
+  members,
+  sectors,
+}: {
+  members: CommunityMember[];
+  sectors: readonly string[];
+}) {
   const [query, setQuery] = useState("");
   const [sector, setSector] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
-    return communityMembers.filter((m) => {
+    return members.filter((m) => {
       const matchesSector = !sector || m.sector === sector;
       const q = query.trim().toLowerCase();
       const matchesQuery =
@@ -27,7 +33,7 @@ export function MemberDirectory() {
         m.sector.toLowerCase().includes(q);
       return matchesSector && matchesQuery;
     });
-  }, [query, sector]);
+  }, [query, sector, members]);
 
   return (
     <div>

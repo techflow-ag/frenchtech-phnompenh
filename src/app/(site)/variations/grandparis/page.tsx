@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { upcomingEvents, pastEvents } from "@/data/events";
+import { getUpcomingEvents, getPastEvents } from "@/lib/events";
 import { ecosystemPartners } from "@/data/ecosystem";
 import { Reveal } from "@/components/Reveal";
 import { NewsletterForm } from "@/components/NewsletterForm";
@@ -66,9 +66,9 @@ function Underlined({
   );
 }
 
-export default function GrandParisHome() {
-  const upcoming = upcomingEvents().slice(0, 2);
-  const past = pastEvents();
+export default async function GrandParisHome() {
+  const [upcomingAll, past] = await Promise.all([getUpcomingEvents(), getPastEvents()]);
+  const upcoming = upcomingAll.slice(0, 2);
   const news = [...upcoming, ...past].filter((e) => e.image).slice(0, 4);
   const gallery = [
     "/images/events/event-3.jpg",

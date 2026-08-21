@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { upcomingEvents } from "@/data/events";
-import { boardMembers } from "@/data/board";
+import { getUpcomingEvents } from "@/lib/events";
+import { getBoardMembers } from "@/lib/board";
 import { EventCard } from "@/components/EventCard";
 import { BoardGrid } from "@/components/BoardGrid";
 import { PersonaGrid } from "@/components/PersonaGrid";
@@ -45,8 +45,12 @@ const pillars = [
   },
 ];
 
-export default function Home() {
-  const upcoming = upcomingEvents().slice(0, 2);
+export default async function Home() {
+  const [upcomingAll, boardMembers] = await Promise.all([
+    getUpcomingEvents(),
+    getBoardMembers(),
+  ]);
+  const upcoming = upcomingAll.slice(0, 2);
 
   return (
     <>

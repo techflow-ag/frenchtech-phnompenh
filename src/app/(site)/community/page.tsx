@@ -8,6 +8,7 @@ import { LogoWall } from "@/components/LogoWall";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
 import { ecosystemPartners } from "@/data/ecosystem";
+import { getCommunityMembers, sectors } from "@/lib/community";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
     "The startups, companies, and organizations of La French Tech Phnom Penh, fintech, foodtech, AI, cybersecurity, e-commerce, and more.",
 };
 
-export default function CommunityPage() {
+export default async function CommunityPage() {
+  const members = await getCommunityMembers();
   return (
     <>
       <PageHero
@@ -26,7 +28,7 @@ export default function CommunityPage() {
       />
 
       <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-        <MemberDirectory />
+        <MemberDirectory members={members} sectors={sectors} />
       </section>
 
       {/* Full ecosystem logo wall */}
