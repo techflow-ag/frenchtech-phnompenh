@@ -96,7 +96,7 @@ export function Footer() {
               All Rights Reserved © Made with{" "}
               <span className="text-rouge">❤</span> By{" "}
               <a
-                href="https://techflow-agency.com/"
+                href="https://www.techflow-agency.com/en"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 underline hover:text-white"
