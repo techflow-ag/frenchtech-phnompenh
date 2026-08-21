@@ -7,11 +7,31 @@ import { Reveal } from "./Reveal";
 
 export function WelcomeGuide() {
   const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
 
-  // Wire to a real provider (Resend/Brevo/Mailchimp) to actually capture emails.
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setBusy(true);
+    const fd = new FormData(e.currentTarget);
+    try {
+      await fetch("/api/welcome-guide", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: fd.get("wg-first"),
+          lastName: fd.get("wg-last"),
+          role: fd.get("wg-role"),
+          organization: fd.get("wg-org"),
+          email: fd.get("wg-email"),
+          phone: fd.get("wg-phone"),
+        }),
+      });
+    } catch {
+      // still confirm
+    } finally {
+      setBusy(false);
+      setSent(true);
+    }
   }
 
   return (
@@ -86,6 +106,7 @@ export function WelcomeGuide() {
                     </label>
                     <select
                       id="wg-role"
+                      name="wg-role"
                       className="mt-2 w-full rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-rouge"
                     >
                       <option>Startup / founder</option>
@@ -107,9 +128,10 @@ export function WelcomeGuide() {
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 rounded-full bg-rouge px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-bleu"
+                    disabled={busy}
+                    className="inline-flex items-center gap-2 rounded-full bg-rouge px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-bleu disabled:opacity-60"
                   >
-                    Get the guide
+                    {busy ? "Sending…" : "Get the guide"}
                     <ArrowRight className="h-4 w-4" />
                   </button>
                   <span className="text-xs text-ink/50">
@@ -146,6 +168,7 @@ function Field({
       </label>
       <input
         id={id}
+        name={id}
         type={type}
         required={required}
         className="mt-2 w-full rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-rouge"

@@ -6,12 +6,24 @@ import { ArrowRight, Check } from "lucide-react";
 export function NewsletterForm({ dark = false }: { dark?: boolean }) {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
 
-  // Wire to a real provider (Resend, Brevo, Mailchimp) before launch.
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
-    setSent(true);
+    setBusy(true);
+    try {
+      await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+    } catch {
+      // fail silently for newsletter; still confirm
+    } finally {
+      setBusy(false);
+      setSent(true);
+    }
   }
 
   if (sent) {
@@ -47,9 +59,10 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
       />
       <button
         type="submit"
-        className="display flex items-center gap-2 bg-rouge px-5 py-3 text-xs text-white transition-colors hover:bg-bleu"
+        disabled={busy}
+        className="display flex items-center gap-2 bg-rouge px-5 py-3 text-xs text-white transition-colors hover:bg-bleu disabled:opacity-60"
       >
-        Subscribe
+        {busy ? "…" : "Subscribe"}
         <ArrowRight className="h-4 w-4" />
       </button>
     </form>

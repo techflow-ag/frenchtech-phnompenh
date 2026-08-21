@@ -50,6 +50,7 @@ export function EventRegisterForm() {
     preselected ? [preselected] : [],
   );
   const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
 
   function toggle(id: string) {
     setSelected((prev) =>
@@ -57,10 +58,31 @@ export function EventRegisterForm() {
     );
   }
 
-  // Wire to a real backend / Typeform before launch.
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setBusy(true);
+    const fd = new FormData(e.currentTarget);
+    const labels = selected.map(
+      (id) => OPTIONS.find((o) => o.id === id)?.label ?? id,
+    );
+    try {
+      await fetch("/api/event-register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fd.get("reg-name"),
+          company: fd.get("reg-company"),
+          email: fd.get("reg-email"),
+          profile: fd.get("reg-profile"),
+          events: labels,
+        }),
+      });
+    } catch {
+      // still confirm
+    } finally {
+      setBusy(false);
+      setSent(true);
+    }
   }
 
   if (sent) {
@@ -137,6 +159,7 @@ export function EventRegisterForm() {
             </label>
             <select
               id="reg-profile"
+              name="reg-profile"
               className="mt-2 w-full rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-rouge"
             >
               <option>Startup / founder</option>
@@ -149,9 +172,10 @@ export function EventRegisterForm() {
         </div>
         <button
           type="submit"
-          className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-rouge px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-bleu"
+          disabled={busy}
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-rouge px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-bleu disabled:opacity-60"
         >
-          Register my interest
+          {busy ? "Sending…" : "Register my interest"}
           <ArrowRight className="h-4 w-4" />
         </button>
         <p className="mt-3 text-center text-xs text-ink/50">
@@ -183,6 +207,7 @@ function Field({
       </label>
       <input
         id={id}
+        name={id}
         type={type}
         required={required}
         className="mt-2 w-full rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-rouge"

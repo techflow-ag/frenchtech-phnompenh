@@ -13,11 +13,32 @@ const reasons = [
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(false);
 
-  // Wire to a real backend (Resend, Formspree, or a route handler) before launch.
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setBusy(true);
+    setError(false);
+    const fd = new FormData(e.currentTarget);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fd.get("name"),
+          email: fd.get("email"),
+          reason: fd.get("reason"),
+          message: fd.get("message"),
+        }),
+      });
+      if (!res.ok) throw new Error();
+      setSent(true);
+    } catch {
+      setError(true);
+    } finally {
+      setBusy(false);
+    }
   }
 
   if (sent) {
@@ -86,11 +107,17 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="display inline-flex w-fit items-center gap-2 bg-rouge px-7 py-4 text-sm text-white transition-colors hover:bg-bleu"
+        disabled={busy}
+        className="display inline-flex w-fit items-center gap-2 bg-rouge px-7 py-4 text-sm text-white transition-colors hover:bg-bleu disabled:opacity-60"
       >
-        Send message
+        {busy ? "Sending…" : "Send message"}
         <ArrowRight className="h-4 w-4" />
       </button>
+      {error && (
+        <p className="text-sm text-rouge">
+          Something went wrong. Please try again or email frenchtech.pp@gmail.com.
+        </p>
+      )}
     </form>
   );
 }
