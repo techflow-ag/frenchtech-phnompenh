@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      // Make the apex the canonical/primary domain: www -> apex.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.lafrenchtech-cambodge.com" }],
+        destination: "https://lafrenchtech-cambodge.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
