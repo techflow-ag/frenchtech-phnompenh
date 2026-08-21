@@ -3,8 +3,9 @@ import { addToAudience, sendMail } from "@/lib/mail";
 
 export async function POST(req: Request) {
   try {
-    const { firstName, lastName, role, organization, email, phone } =
-      await req.json();
+    const body = await req.json();
+    if (body.hp_field) return NextResponse.json({ ok: true });
+    const { firstName, lastName, role, organization, email, phone } = body;
     if (!firstName || !email) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }

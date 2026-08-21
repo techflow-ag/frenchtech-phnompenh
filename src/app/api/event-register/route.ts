@@ -3,7 +3,9 @@ import { sendMail } from "@/lib/mail";
 
 export async function POST(req: Request) {
   try {
-    const { name, company, email, profile, events } = await req.json();
+    const body = await req.json();
+    if (body.hp_field) return NextResponse.json({ ok: true });
+    const { name, company, email, profile, events } = body;
     if (!name || !email || !Array.isArray(events)) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }

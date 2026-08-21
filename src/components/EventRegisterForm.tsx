@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { Honeypot } from "./Honeypot";
 
 // The French Tech events startups can opt into during the Francophonie week.
 const OPTIONS = [
@@ -71,6 +72,7 @@ export function EventRegisterForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: fd.get("reg-name"),
+          hp_field: fd.get("hp_field"),
           company: fd.get("reg-company"),
           email: fd.get("reg-email"),
           profile: fd.get("reg-profile"),
@@ -100,6 +102,7 @@ export function EventRegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
+      <Honeypot />
       {/* Event picker */}
       <div>
         <h2 className="display text-xl text-ink">Which events interest you?</h2>

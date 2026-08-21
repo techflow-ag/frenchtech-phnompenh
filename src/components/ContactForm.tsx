@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { Honeypot } from "./Honeypot";
 
 const reasons = [
   "Join as a member",
@@ -27,6 +28,7 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: fd.get("name"),
+          hp_field: fd.get("hp_field"),
           email: fd.get("email"),
           reason: fd.get("reason"),
           message: fd.get("message"),
@@ -54,6 +56,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-5">
+      <Honeypot />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-ink/60">

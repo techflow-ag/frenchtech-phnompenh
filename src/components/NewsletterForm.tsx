@@ -2,21 +2,23 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { Honeypot } from "./Honeypot";
 
 export function NewsletterForm({ dark = false }: { dark?: boolean }) {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email) return;
     setBusy(true);
+    const hp = new FormData(e.currentTarget).get("hp_field");
     try {
       await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, hp_field: hp }),
       });
     } catch {
       // fail silently for newsletter; still confirm
@@ -41,6 +43,7 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full max-w-md">
+      <Honeypot />
       <label htmlFor="newsletter-email" className="sr-only">
         Email address
       </label>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { Honeypot } from "./Honeypot";
 import { RoosterMark } from "./Logo";
 import { Reveal } from "./Reveal";
 
@@ -19,6 +20,7 @@ export function WelcomeGuide() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           firstName: fd.get("wg-first"),
+          hp_field: fd.get("hp_field"),
           lastName: fd.get("wg-last"),
           role: fd.get("wg-role"),
           organization: fd.get("wg-org"),
@@ -94,6 +96,7 @@ export function WelcomeGuide() {
                 onSubmit={handleSubmit}
                 className="rounded-2xl bg-mist p-6 ring-1 ring-black/5 md:p-8"
               >
+                <Honeypot />
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field id="wg-first" label="First name" required />
                   <Field id="wg-last" label="Last name" required />
