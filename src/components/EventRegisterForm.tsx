@@ -63,9 +63,10 @@ export function EventRegisterForm() {
     e.preventDefault();
     setBusy(true);
     const fd = new FormData(e.currentTarget);
-    const labels = selected.map(
-      (id) => OPTIONS.find((o) => o.id === id)?.label ?? id,
-    );
+    const labels = selected.map((id) => {
+      const o = OPTIONS.find((opt) => opt.id === id);
+      return o ? `${o.label} — ${o.when} 2026` : id;
+    });
     try {
       await fetch("/api/event-register", {
         method: "POST",
