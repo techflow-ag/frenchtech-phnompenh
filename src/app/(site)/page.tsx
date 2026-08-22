@@ -15,6 +15,29 @@ import { Quote } from "@/components/Quote";
 import { PressSection } from "@/components/PressSection";
 import { WelcomeGuide } from "@/components/WelcomeGuide";
 import { FinalCTA } from "@/components/FinalCTA";
+import { JsonLd } from "@/components/JsonLd";
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "La French Tech Phnom Penh",
+  url: "https://lafrenchtech-cambodge.com",
+  logo: "https://lafrenchtech-cambodge.com/images/logo-mark.png",
+  description:
+    "The official French Tech Community in Cambodia, connecting French, Cambodian and international founders, investors and tech talent.",
+  foundingDate: "2015",
+  email: "frenchtech.pp@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Connexion Building, Koh Pich, Sangkat Tonle Bassac",
+    addressLocality: "Phnom Penh",
+    addressCountry: "KH",
+  },
+  sameAs: [
+    "https://kh.linkedin.com/company/la-french-tech-phnompenh",
+    "https://www.facebook.com/CambodgeFrenchTech/",
+  ],
+};
 
 const stats = [
   { value: "150+", label: "Guests at our first Tech Talk, June 2026" },
@@ -54,6 +77,7 @@ export default async function Home() {
 
   return (
     <>
+      <JsonLd data={orgJsonLd} />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 pb-20 pt-16 md:pb-28 md:pt-24">

@@ -56,17 +56,36 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://lafrenchtech-cambodge.com"),
   title: {
-    default: "La French Tech Phnom Penh, The French Tech Community in Cambodia",
-    template: "%s, La French Tech Phnom Penh",
+    default: "La French Tech Phnom Penh | The French Tech Community in Cambodia",
+    template: "%s | La French Tech Phnom Penh",
   },
   description:
     "Official French Tech Community in Cambodia since 2019. We connect French, Cambodian, and international founders, investors, and tech talent in Phnom Penh.",
+  applicationName: "La French Tech Phnom Penh",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "La French Tech Phnom Penh",
     description:
-      "The official French Tech Community in Cambodia, events, startups, investors, and the France–Cambodia tech ecosystem.",
+      "The official French Tech Community in Cambodia: events, startups, investors, and the France-Cambodia tech ecosystem.",
+    url: "https://lafrenchtech-cambodge.com",
+    siteName: "La French Tech Phnom Penh",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "La French Tech Phnom Penh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "La French Tech Phnom Penh",
+    description:
+      "The official French Tech Community in Cambodia: events, startups, investors, and the France-Cambodia tech ecosystem.",
+    images: ["/og.jpg"],
   },
 };
 

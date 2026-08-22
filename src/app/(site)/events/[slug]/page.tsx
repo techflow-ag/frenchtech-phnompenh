@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, MapPin } from "lucide-react";
 import { getEventBySlug, getEventSlugs } from "@/lib/events";
 import { Reveal } from "@/components/Reveal";
+import { JsonLd } from "@/components/JsonLd";
+
+const SITE = "https://lafrenchtech-cambodge.com";
 
 export async function generateStaticParams() {
   return (await getEventSlugs()).map((slug) => ({ slug }));
@@ -46,8 +49,41 @@ export default async function EventPage({ params }: PageProps<"/events/[slug]">)
 
   const isUpcoming = new Date(event.endDate ?? event.date) >= new Date();
 
+  const eventJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.title,
+    description: event.description,
+    startDate: event.date,
+    endDate: event.endDate ?? event.date,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    image: event.image ? `${SITE}${event.image}` : undefined,
+    location: {
+      "@type": "Place",
+      name: event.venue,
+      address: { "@type": "PostalAddress", addressLocality: event.city, addressCountry: "KH" },
+    },
+    organizer: {
+      "@type": "Organization",
+      name: "La French Tech Phnom Penh",
+      url: SITE,
+    },
+  };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Events", item: `${SITE}/events` },
+      { "@type": "ListItem", position: 3, name: event.title, item: `${SITE}/events/${slug}` },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={eventJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <div className="mx-auto max-w-6xl px-5 pt-12 md:pt-16">
         <Reveal>
           <Link

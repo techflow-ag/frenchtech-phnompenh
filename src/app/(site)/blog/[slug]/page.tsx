@@ -6,6 +6,9 @@ import { getArticle, listArticles, listArticleSlugs } from "@/lib/articles";
 import { ArticleBody } from "@/components/ArticleBody";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
+import { JsonLd } from "@/components/JsonLd";
+
+const SITE = "https://lafrenchtech-cambodge.com";
 
 export async function generateStaticParams() {
   const slugs = await listArticleSlugs();
@@ -48,8 +51,35 @@ export default async function ArticlePage({
 
   const more = (await listArticles()).filter((a) => a.slug !== slug).slice(0, 3);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.metaDescription,
+    image: `${SITE}${article.cover}`,
+    datePublished: article.date,
+    author: { "@type": "Organization", name: article.author },
+    publisher: {
+      "@type": "Organization",
+      name: "La French Tech Phnom Penh",
+      logo: { "@type": "ImageObject", url: `${SITE}/images/logo-mark.png` },
+    },
+    mainEntityOfPage: `${SITE}/blog/${slug}`,
+  };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Newsroom", item: `${SITE}/blog` },
+      { "@type": "ListItem", position: 3, name: article.title, item: `${SITE}/blog/${slug}` },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <div className="mx-auto max-w-6xl px-5 pt-12 md:pt-16">
         <Reveal>
           <Link
