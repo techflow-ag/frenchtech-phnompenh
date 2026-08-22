@@ -82,9 +82,9 @@ export default function PartnersPage() {
       <section className="border-t border-line bg-mist">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
           <SectionHeading
-            eyebrow="The ecosystem"
-            title="French companies already in Cambodia"
-            intro="Energy, banking, retail, telecoms, French business is woven into the Kingdom's economy. Our members are the startups writing its next chapter."
+            eyebrow="Thank you"
+            title="Our sponsors & partners"
+            intro="The organizations that support La French Tech Phnom Penh and make our events and programs possible."
             align="center"
           />
           <div className="mt-12">

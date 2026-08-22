@@ -259,9 +259,9 @@ export default async function Home() {
       <section className="border-b border-line bg-mist">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <SectionHeading
-            eyebrow="Already here"
-            title="French innovation is already in Cambodia"
-            intro="From energy and banking to retail and telecoms, French companies are part of the Kingdom's economy. The community brings the next generation of startups into that story."
+            eyebrow="Thank you"
+            title="Our sponsors & partners"
+            intro="The organizations that support La French Tech Phnom Penh and make our events and programs possible."
             align="center"
           />
           <div className="mt-12">
