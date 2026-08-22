@@ -99,7 +99,7 @@ export default async function AerialHome() {
           <Reveal delay={360}>
             <div className="mt-10 flex flex-wrap gap-4 font-sans">
               <Link
-                href="/contact#join"
+                href="/contact"
                 className="display flex items-center gap-2 bg-rouge px-7 py-4 text-sm text-white transition-colors hover:bg-white hover:text-ink"
               >
                 Join the community

@@ -13,7 +13,7 @@ const personas = [
     title: "You run a startup",
     copy: "Get listed in the community directory, meet investors, and plug into a global network of 100+ French Tech communities.",
     cta: "Join the community",
-    href: "/contact#join",
+    href: "/contact",
   },
   {
     title: "You're a partner or sponsor",

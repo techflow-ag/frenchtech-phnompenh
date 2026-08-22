@@ -78,7 +78,7 @@ export default async function EditorialHome() {
             <Reveal delay={360}>
               <div className="mt-10 flex flex-col items-start gap-3">
                 <Link
-                  href="/contact#join"
+                  href="/contact"
                   className="inline-flex items-center gap-2 bg-ink px-7 py-4 font-mono text-sm uppercase tracking-wide text-white transition-colors hover:bg-rouge"
                 >
                   Join the community

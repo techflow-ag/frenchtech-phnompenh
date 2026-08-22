@@ -36,7 +36,7 @@ const programmes = [
 ];
 
 const personas = [
-  { title: "Startups", href: "/contact#join" },
+  { title: "Startups", href: "/contact" },
   { title: "Corporates & SMEs", href: "/partners#become-a-partner" },
   { title: "Investors", href: "/community" },
   { title: "Incubators & partners", href: "/partners#become-a-partner" },
@@ -104,7 +104,7 @@ export default async function GrandParisHome() {
                   Who we are
                 </Link>
                 <Link
-                  href="/contact#join"
+                  href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-ink transition-colors hover:border-rouge hover:text-rouge"
                 >
                   Book a meeting
@@ -302,7 +302,7 @@ export default async function GrandParisHome() {
             </h2>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
-                href="/contact#join"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-rouge transition-colors hover:bg-ink hover:text-white"
               >
                 Join us

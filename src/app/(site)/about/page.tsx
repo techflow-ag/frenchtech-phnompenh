@@ -213,7 +213,7 @@ export default function AboutPage() {
           </div>
           <Reveal className="mt-10">
             <Link
-              href="/contact#join"
+              href="/contact"
               className="display inline-flex items-center gap-2 bg-rouge px-7 py-4 text-sm text-white transition-colors hover:bg-bleu"
             >
               Join the community

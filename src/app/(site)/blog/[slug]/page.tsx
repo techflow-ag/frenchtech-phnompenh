@@ -6,7 +6,6 @@ import { getArticle, listArticles, listArticleSlugs } from "@/lib/articles";
 import { ArticleBody } from "@/components/ArticleBody";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Reveal } from "@/components/Reveal";
-import { JOIN_FORM_URL } from "@/lib/config";
 
 export async function generateStaticParams() {
   const slugs = await listArticleSlugs();
@@ -106,15 +105,13 @@ export default async function ArticlePage({
                 Founders, investors and partners are welcome. It&apos;s free to
                 join the French Tech Phnom Penh community.
               </p>
-              <a
-                href={JOIN_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-rouge px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-bleu"
               >
                 Join us
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
               <Link
                 href="/events/register"
                 className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-line px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-rouge hover:text-rouge"

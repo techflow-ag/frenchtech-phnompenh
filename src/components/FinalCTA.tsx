@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { RoosterMark } from "./Logo";
 import { Reveal } from "./Reveal";
-import { JOIN_FORM_URL } from "@/lib/config";
 
 export function FinalCTA({
   title = "Together, let's connect the French–Cambodian tech ecosystem.",
@@ -47,15 +46,13 @@ export function FinalCTA({
               {title}
             </h2>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <a
-                href={JOIN_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-bleu transition-colors hover:bg-rouge hover:text-white"
               >
                 Join us
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-white/50 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-bleu"

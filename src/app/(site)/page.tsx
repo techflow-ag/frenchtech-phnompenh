@@ -83,7 +83,7 @@ export default async function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
-                  href="/contact#join"
+                  href="/contact"
                   className="display flex items-center gap-2 bg-rouge px-7 py-4 text-sm text-white transition-colors hover:bg-bleu"
                 >
                   Join the community
