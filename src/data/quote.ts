@@ -1,6 +1,9 @@
-// Placeholder quote, to be confirmed/replaced by Thierry Tea.
 export const boardQuote = {
-  text: "Cambodia is becoming a genuine bridge between the Francophone world and the innovation ecosystems of Asia. Our role is to connect founders, investors and institutions, and to make sure Cambodian and French entrepreneurs build together, across borders.",
+  paragraphs: [
+    "Our role is to connect founders, investors and institutions, to create value and synergies for French and Cambodian startups.",
+    "Today, Cambodia is a growing bridge between the Francophone network and the innovation ecosystems of Asia.",
+    "We welcome the worldwide French Tech communities to explore the hidden opportunities in Asia.",
+  ],
   name: "Thierry Tea",
   role: "Co-President · Co-founder & CEO, Canadia Impact Fund",
   photo: "/images/board/thierry-tea.jpg",

@@ -11,10 +11,15 @@ export function Quote() {
         >
           &ldquo;
         </span>
-        <blockquote className="relative pt-8">
-          <p className="text-xl font-medium leading-relaxed text-ink md:text-2xl">
-            {boardQuote.text}
-          </p>
+        <blockquote className="relative space-y-4 pt-8">
+          {boardQuote.paragraphs.map((p, i) => (
+            <p
+              key={i}
+              className="text-xl font-medium leading-relaxed text-ink md:text-2xl"
+            >
+              {p}
+            </p>
+          ))}
         </blockquote>
         <figcaption className="mt-8 flex items-center gap-4 border-t border-line pt-6">
           {/* eslint-disable-next-line @next/next/no-img-element */}
