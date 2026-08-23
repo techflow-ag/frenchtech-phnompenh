@@ -78,51 +78,61 @@ export default async function Home() {
   return (
     <>
       <JsonLd data={orgJsonLd} />
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-5 pb-20 pt-16 md:pb-28 md:pt-24">
-          <p
-            lang="km"
-            aria-hidden="true"
-            className="font-khmer pointer-events-none absolute -right-10 top-8 select-none text-[10rem] leading-none text-mist md:text-[16rem]"
-          >
-            ភ្នំពេញ
-          </p>
-          <div className="relative">
-            <Reveal>
-              <p className="eyebrow">
-                Official French Tech Community · Cambodia
-              </p>
-              <h1 className="display mt-5 text-5xl text-ink sm:text-7xl md:text-[6rem]">
-                La French Tech
-                <br />
-                <span className="text-rouge">Phnom Penh</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={150}>
-              <p className="mt-8 max-w-xl text-xl leading-relaxed text-ink-soft/80">
-                We connect French, Cambodian, and international founders,
-                investors, and tech talent, and build the bridge between the
-                French startup ecosystem and the Kingdom of Cambodia.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="display flex items-center gap-2 bg-rouge px-7 py-4 text-sm text-white transition-colors hover:bg-bleu"
-                >
-                  Join the community
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/events"
-                  className="display flex items-center gap-2 border border-ink px-7 py-4 text-sm text-ink transition-colors hover:border-rouge hover:text-rouge"
-                >
-                  Next events
-                </Link>
-              </div>
-            </Reveal>
-          </div>
+      {/* Hero with Phnom Penh aerial video */}
+      <section className="relative flex min-h-[88vh] items-end overflow-hidden">
+        <video
+          className="img-settle absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/media/phnompenh-aerial-poster.jpg"
+        >
+          <source src="/media/phnompenh-aerial.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/20" />
+        <p
+          lang="km"
+          aria-hidden="true"
+          className="font-khmer pointer-events-none absolute -right-6 top-6 select-none text-[10rem] leading-none text-white/10 md:text-[16rem]"
+        >
+          ភ្នំពេញ
+        </p>
+        <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 md:pb-24">
+          <Reveal>
+            <p className="eyebrow !text-white/80">
+              Official French Tech Community · Cambodia
+            </p>
+            <h1 className="display mt-5 text-5xl text-white sm:text-7xl md:text-[6rem]">
+              La French Tech
+              <br />
+              <span className="text-rouge">Phnom Penh</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={150}>
+            <p className="mt-8 max-w-xl text-xl leading-relaxed text-white/85">
+              We connect French, Cambodian, and international founders,
+              investors, and tech talent, and build the bridge between the
+              French startup ecosystem and the Kingdom of Cambodia.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="display flex items-center gap-2 bg-rouge px-7 py-4 text-sm text-white transition-colors hover:bg-white hover:text-ink"
+              >
+                Join the community
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/events"
+                className="display flex items-center gap-2 border border-white/40 px-7 py-4 text-sm text-white backdrop-blur-sm transition-colors hover:border-white"
+              >
+                Next events
+              </Link>
+            </div>
+          </Reveal>
         </div>
+        <span className="tricolore absolute inset-x-0 bottom-0" aria-hidden="true" />
       </section>
 
       <KhmerBand />

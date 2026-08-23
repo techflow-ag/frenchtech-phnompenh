@@ -43,6 +43,7 @@ export const cambodiaLogos: { name: string; logo: string }[] = [
   { name: "SBI", logo: "/images/members/sbi-group.png" },
   { name: "Canadia Impact Fund", logo: "/images/partners/canadia-impact-fund.png" },
   { name: "OCIC", logo: "/images/community-partners/ocic.png" },
+  { name: "Aquation", logo: "/images/partners/aquation.png" },
   { name: "Canadia Bank", logo: "/images/partners/canadia-bank.png" },
   { name: "Smart", logo: "/images/partners/smart-axiata.png" },
   { name: "UMAMI", logo: "/images/partners/umami.png" },
