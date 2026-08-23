@@ -37,13 +37,13 @@ export function WelcomeGuide() {
   }
 
   return (
-    <section className="border-t border-line bg-paper">
+    <section className="group border-t border-line bg-paper">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
         {/* Book mockup */}
         <Reveal className="order-2 md:order-1">
           <div className="relative mx-auto flex max-w-sm justify-center">
             <div className="absolute inset-0 translate-x-6 translate-y-8 scale-95 rounded-2xl bg-bleu/10 blur-2xl" />
-            <div className="relative aspect-[3/4] w-64 rotate-[-6deg] rounded-2xl bg-gradient-to-br from-ink to-bleu p-7 shadow-2xl transition-transform duration-500 hover:rotate-0">
+            <div className="relative aspect-[3/4] w-64 rotate-[-6deg] rounded-2xl bg-gradient-to-br from-ink to-bleu p-7 shadow-2xl transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.03]">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
                 <RoosterMark className="h-7 w-7" />
               </div>

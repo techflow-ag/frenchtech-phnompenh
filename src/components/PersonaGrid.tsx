@@ -36,17 +36,21 @@ export function PersonaGrid() {
         <Reveal key={p.title} delay={i * 80} className="h-full">
           <Link
             href={p.href}
-            className="group flex h-full flex-col justify-between bg-ink p-8 transition-colors hover:bg-ink-soft"
+            className="group relative flex h-full flex-col justify-between overflow-hidden bg-ink p-8 transition-colors duration-300 hover:bg-ink-soft"
           >
+            {/* animated accent bar */}
+            <span className="absolute inset-x-0 top-0 h-0.5 w-0 bg-rouge transition-all duration-500 group-hover:w-full" />
             <div>
-              <h3 className="display text-xl text-white">{p.title}</h3>
+              <h3 className="display text-xl text-white transition-transform duration-300 group-hover:translate-x-1">
+                {p.title}
+              </h3>
               <p className="mt-3 text-base leading-relaxed text-white/60">
                 {p.copy}
               </p>
             </div>
             <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-rouge">
               {p.cta}
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </span>
           </Link>
         </Reveal>

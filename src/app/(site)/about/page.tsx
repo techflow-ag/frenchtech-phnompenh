@@ -194,12 +194,14 @@ export default function AboutPage() {
                   className="flex h-full flex-col bg-paper p-7 transition-colors hover:bg-mist"
                 >
                   {p.logo && (
-                    <div className="flex h-16 items-center">
+                    <div className="flex h-20 items-center">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={p.logo}
                         alt={p.name}
-                        className="max-h-14 w-auto max-w-[80%] object-contain"
+                        className={`w-auto max-w-[80%] object-contain ${
+                          i === 0 ? "max-h-16" : "max-h-20"
+                        }`}
                       />
                     </div>
                   )}

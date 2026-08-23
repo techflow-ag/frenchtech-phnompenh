@@ -45,12 +45,12 @@ export function EventCard({
           />
         </div>
       )}
-      <div className="flex flex-1 gap-6 p-6">
-        <div className="flex shrink-0 flex-col items-center self-start border-r border-line pr-6">
+      <div className="flex flex-1 flex-col gap-4 p-6 sm:flex-row sm:gap-6">
+        <div className="flex shrink-0 items-baseline gap-1.5 self-start border-b border-line pb-3 sm:flex-col sm:items-center sm:gap-0 sm:border-b-0 sm:border-r sm:pb-0 sm:pr-6">
           <span className={`display text-3xl ${past ? "text-ink/40" : "text-rouge"}`}>
             {d.day}
           </span>
-          <span className="display mt-1 text-xs uppercase text-ink/60">{d.month}</span>
+          <span className="display text-xs uppercase text-ink/60 sm:mt-1">{d.month}</span>
           <span className="text-[0.65rem] text-ink/40">{d.year}</span>
         </div>
         <div className="min-w-0">

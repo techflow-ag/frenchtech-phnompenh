@@ -11,9 +11,9 @@ export function FinalCTA({
   eyebrow?: string;
 }) {
   return (
-    <section className="bg-paper px-5 py-16 md:py-20">
+    <section className="bg-paper px-5 py-12 md:py-14">
       <Reveal className="mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-bleu via-[#1b1b6e] to-[#3a1e5e] px-6 py-16 text-center md:px-12 md:py-24">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-bleu via-[#1b1b6e] to-[#3a1e5e] px-6 py-11 text-center md:px-12 md:py-16">
           {/* sunburst decoration */}
           <div
             aria-hidden="true"

@@ -142,11 +142,11 @@ export default async function Home() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px md:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.value} delay={i * 80}>
-              <div className="h-full border-r border-line-dark px-5 py-10 md:px-8">
+              <div className="h-full border-r border-line-dark px-5 py-6 md:px-8 md:py-10">
                 <p className="display text-4xl text-white md:text-5xl">
                   {s.value}
                 </p>
-                <p className="mt-3 text-xs leading-relaxed text-white/60">
+                <p className="mt-2 text-xs leading-relaxed text-white/60 md:mt-3">
                   {s.label}
                 </p>
               </div>
@@ -187,11 +187,17 @@ export default async function Home() {
             eyebrow="What we do"
             title="One community, three missions"
           />
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {pillars.map((p, i) => (
-              <Reveal key={p.title} delay={i * 100}>
-                <div className="border-t-2 border-rouge pt-5">
-                  <h3 className="display text-2xl text-ink">{p.title}</h3>
+              <Reveal key={p.title} delay={i * 100} className="h-full">
+                <div className="group relative flex h-full flex-col rounded-2xl bg-paper p-8 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.28)]">
+                  <div className="flex items-center justify-between">
+                    <span className="display text-sm text-rouge">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-0.5 w-8 bg-rouge transition-all duration-300 group-hover:w-16" />
+                  </div>
+                  <h3 className="display mt-5 text-2xl text-ink">{p.title}</h3>
                   <p className="mt-3 text-base leading-relaxed text-ink-soft/80">
                     {p.copy}
                   </p>
