@@ -37,15 +37,15 @@ export const ecosystemPartners: { name: string; logo: string }[] = [
 ];
 
 // Our sponsors & partners, logo wall.
-export const cambodiaLogos: { name: string; logo: string }[] = [
+export const cambodiaLogos: { name: string; logo: string; imgClass?: string }[] = [
   { name: "La French Tech", logo: "/images/logo-mark.png" },
-  { name: "TechFlow", logo: "/images/members/techflow.png" },
-  { name: "SBI", logo: "/images/members/sbi-group.png" },
+  { name: "Smart", logo: "/images/partners/smart-axiata.png" },
+  { name: "SBI", logo: "/images/members/sbi-group.png", imgClass: "scale-125" },
   { name: "Canadia Impact Fund", logo: "/images/partners/canadia-impact-fund.png" },
   { name: "OCIC", logo: "/images/community-partners/ocic.png" },
   { name: "Aquation", logo: "/images/partners/aquation.png" },
   { name: "Canadia Bank", logo: "/images/partners/canadia-bank.png" },
-  { name: "Smart", logo: "/images/partners/smart-axiata.png" },
+  { name: "TechFlow", logo: "/images/members/techflow.png" },
   { name: "UMAMI", logo: "/images/partners/umami.png" },
   { name: "BRED Bank Cambodia", logo: "/images/partners/bred-cambodia.png" },
 ];

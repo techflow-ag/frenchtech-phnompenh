@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 export function LogoWall({
   logos,
 }: {
-  logos: { name: string; logo: string }[];
+  logos: { name: string; logo: string; imgClass?: string }[];
 }) {
   return (
     <div className="grid grid-cols-2 gap-px border border-line bg-line sm:grid-cols-3 md:grid-cols-5">
@@ -15,7 +15,7 @@ export function LogoWall({
               src={l.logo}
               alt={l.name}
               loading="lazy"
-              className="max-h-20 w-auto max-w-[85%] object-contain opacity-90 transition-all duration-300 hover:scale-105 hover:opacity-100 md:max-h-24"
+              className={`max-h-20 w-auto max-w-[85%] object-contain opacity-90 transition-all duration-300 hover:scale-105 hover:opacity-100 md:max-h-24 ${l.imgClass ?? ""}`}
             />
           </div>
         </Reveal>

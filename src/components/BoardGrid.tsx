@@ -61,7 +61,7 @@ export function BoardGrid({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${m.name} on LinkedIn`}
-                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-bleu text-white transition-colors hover:bg-rouge"
+                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center bg-[#0A66C2] text-white transition-colors hover:bg-[#004182]"
                 >
                   <LinkedinIcon className="h-4 w-4" />
                 </a>
