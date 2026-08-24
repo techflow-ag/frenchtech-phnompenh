@@ -7,7 +7,7 @@ const reader = createReader(process.cwd(), keystaticConfig);
 export const sectors = [
   "Fintech",
   "Foodtech",
-  "AI & Software",
+  "Software & AI",
   "Cybersecurity",
   "E-commerce & Logistics",
   "Edtech",

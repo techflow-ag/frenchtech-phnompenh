@@ -17,7 +17,7 @@ export const ecosystemPartners: { name: string; logo: string }[] = [
   { name: "Cambodia Startup", logo: "/images/community-partners/cambodia-startup.png" },
   { name: "Plug and Play", logo: "/images/community-partners/plug-and-play.png" },
   { name: "CADT", logo: "/images/community-partners/cadt.png" },
-  { name: "CamTech", logo: "/images/community-partners/camtech.png" },
+  { name: "CamTech", logo: "/images/community-partners/camtech-wide.jpg" },
   { name: "DICHI Academy", logo: "/images/community-partners/dichi-academy.png" },
   { name: "Connexion", logo: "/images/community-partners/connexion.jpg" },
   { name: "Cambodia Investment Review", logo: "/images/community-partners/cambodia-investment-review.jpg" },
