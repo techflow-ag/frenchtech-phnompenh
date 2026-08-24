@@ -42,8 +42,9 @@ export function WelcomeGuide() {
         {/* Book mockup */}
         <Reveal className="order-2 md:order-1">
           <div className="relative mx-auto flex max-w-sm justify-center">
-            <div className="absolute inset-0 translate-x-6 translate-y-8 scale-95 rounded-2xl bg-bleu/10 blur-2xl" />
-            <div className="relative aspect-[3/4] w-64 rotate-[-6deg] rounded-2xl bg-gradient-to-br from-ink to-bleu p-7 shadow-2xl transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.03]">
+            <div className="absolute inset-0 translate-x-6 translate-y-8 scale-95 rounded-2xl bg-bleu/10 blur-2xl transition-all duration-500 group-hover:scale-100 group-hover:bg-bleu/20" />
+            <div className="wg-float">
+              <div className="wg-book relative aspect-[3/4] w-64 cursor-pointer rounded-2xl bg-gradient-to-br from-ink to-bleu p-7 shadow-2xl">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
                 <RoosterMark className="h-7 w-7" />
               </div>
@@ -62,6 +63,7 @@ export function WelcomeGuide() {
                 The onboarding guide to Cambodia&apos;s tech ecosystem, for
                 entrepreneurs, startups, investors and talent.
               </p>
+              </div>
             </div>
           </div>
         </Reveal>
