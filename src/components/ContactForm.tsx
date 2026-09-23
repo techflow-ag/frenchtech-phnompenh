@@ -32,6 +32,7 @@ export function ContactForm() {
           email: fd.get("email"),
           reason: fd.get("reason"),
           message: fd.get("message"),
+          sourceUrl: window.location.href,
         }),
       });
       if (!res.ok) throw new Error();

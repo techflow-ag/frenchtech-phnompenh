@@ -18,7 +18,11 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
       await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, hp_field: hp }),
+        body: JSON.stringify({
+          email,
+          hp_field: hp,
+          sourceUrl: window.location.href,
+        }),
       });
     } catch {
       // fail silently for newsletter; still confirm

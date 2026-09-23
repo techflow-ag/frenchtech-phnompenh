@@ -78,6 +78,8 @@ export function EventRegisterForm() {
           email: fd.get("reg-email"),
           profile: fd.get("reg-profile"),
           events: labels,
+          eventIds: selected,
+          sourceUrl: window.location.href,
         }),
       });
     } catch {

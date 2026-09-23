@@ -26,6 +26,7 @@ export function WelcomeGuide() {
           organization: fd.get("wg-org"),
           email: fd.get("wg-email"),
           phone: fd.get("wg-phone"),
+          sourceUrl: window.location.href,
         }),
       });
     } catch {

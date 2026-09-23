@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { sendMail } from "@/lib/mail";
+import { syncToBrevo } from "@/lib/brevo";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     if (body.hp_field) return NextResponse.json({ ok: true });
-    const { name, company, email, profile, events } = body;
+    const { name, company, email, profile, events, eventIds, sourceUrl } = body;
     if (!name || !email || !Array.isArray(events)) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
@@ -23,6 +24,16 @@ export async function POST(req: Request) {
         `Selected events:`,
         events.length ? events.map((e: string) => `- ${e}`).join("\n") : "(none)",
       ].join("\n"),
+    });
+    await syncToBrevo({
+      email,
+      name,
+      company,
+      profile,
+      events,
+      eventIds,
+      sourceUrl,
+      sourceForm: "eventRegister",
     });
     return NextResponse.json({ ok: true });
   } catch (e) {
