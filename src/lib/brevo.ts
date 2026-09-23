@@ -16,15 +16,19 @@ export const LISTS = {
   welcomeGuide: 7,
 } as const;
 
-/** EventRegisterForm option id -> Brevo boolean attribute. */
-const EVENT_ATTR: Record<string, string> = {
-  "french-tech-asia-forum-2026": "EVT_ASIA_FORUM",
-  "francotech-2026": "EVT_FRANCOTECH",
-  "communities-evening": "EVT_COMMUNITIES",
-  "innovation-ecosystem-lunch": "EVT_ASEAN_LUNCH",
-  "evening-reception": "EVT_RECEPTION",
-  "startup-investor-matching": "EVT_INVESTOR_MATCH",
-  "ministries-visits": "EVT_MINISTRIES",
+/**
+ * EventRegisterForm option id -> the Brevo boolean attribute and the dedicated
+ * list (folder "Événements — Francophonie 2026") for that event. The list is
+ * what the team picks when sending a reminder to one event's registrants.
+ */
+const EVENTS: Record<string, { attr: string; list: number }> = {
+  "french-tech-asia-forum-2026": { attr: "EVT_ASIA_FORUM", list: 9 },
+  "francotech-2026": { attr: "EVT_FRANCOTECH", list: 10 },
+  "communities-evening": { attr: "EVT_COMMUNITIES", list: 11 },
+  "innovation-ecosystem-lunch": { attr: "EVT_ASEAN_LUNCH", list: 12 },
+  "evening-reception": { attr: "EVT_RECEPTION", list: 13 },
+  "startup-investor-matching": { attr: "EVT_INVESTOR_MATCH", list: 14 },
+  "ministries-visits": { attr: "EVT_MINISTRIES", list: 15 },
 };
 
 /** Brevo stores long text fine; cap so one lead can't bloat the record. */
@@ -139,9 +143,14 @@ export async function upsertContact(lead: BrevoLead): Promise<void> {
     attrs.EVENEMENTS = [...labels].join(" | ").slice(0, MAX_TEXT);
     attrs.NB_EVENEMENTS = labels.size;
   }
+  // Each chosen event ticks its boolean and enrols the contact in its list.
+  // Neither is ever undone, so a second partial registration can't drop someone.
+  const eventLists = new Set<number>();
   for (const id of lead.eventIds ?? []) {
-    const attr = EVENT_ATTR[id];
-    if (attr) attrs[attr] = true; // never un-tick a previously chosen event
+    const event = EVENTS[id];
+    if (!event) continue;
+    attrs[event.attr] = true;
+    eventLists.add(event.list);
   }
 
   const firstSeen = String(prev?.PREMIER_CONTACT ?? at).slice(0, 10);
@@ -159,7 +168,7 @@ export async function upsertContact(lead: BrevoLead): Promise<void> {
     body: JSON.stringify({
       email: lead.email,
       updateEnabled: true,
-      listIds: [LISTS[lead.sourceForm]],
+      listIds: [LISTS[lead.sourceForm], ...eventLists],
       attributes: attrs,
     }),
   });

@@ -36,6 +36,18 @@ integration.
 `BREVO_API_KEY` is deliberately not set on preview deployments, so a test
 branch can never write into the live CRM.
 
+### Brevo structure
+
+Contacts land in a list per form (folder "Site web") and, for event
+registrations, additionally in one list per chosen event (folder
+"Événements — Francophonie 2026"). The per-event lists are what the team
+selects when emailing one event's registrants; `src/lib/brevo.ts` keeps them
+in sync, so new registrants are enrolled automatically. The matching `EVT_*`
+boolean attributes stay available for ad-hoc segments built in the Brevo UI.
+
+Adding an event to `EventRegisterForm` means creating its list in Brevo and
+adding the id to the `EVENTS` map in `src/lib/brevo.ts`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
