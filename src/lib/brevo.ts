@@ -59,8 +59,14 @@ function splitName(full: string): { first: string; last: string } {
   return { first: parts[0], last: parts.slice(1).join(" ") };
 }
 
+/**
+ * Today in Phnom Penh. The server runs in UTC, so a submission made between
+ * midnight and 7am local time would otherwise be filed under the previous day.
+ */
 function today(): string {
-  return new Date().toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Phnom_Penh",
+  }).format(new Date());
 }
 
 /** Existing attributes for a contact, or null when unknown to Brevo. */
