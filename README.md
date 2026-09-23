@@ -20,6 +20,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment variables
+
+Set these in the Vercel project (Settings → Environment Variables) and in
+`.env.local` for local development. None of them are optional in production:
+a missing key doesn't break a form submission, it just silently skips that
+integration.
+
+| Variable | Used by | Purpose |
+| --- | --- | --- |
+| `RESEND_API_KEY` | `src/lib/mail.ts` | Sends the notification email for every form submission. |
+| `RESEND_AUDIENCE_ID` | `src/lib/mail.ts` | Optional Resend audience the newsletter and welcome-guide forms subscribe to. |
+| `BREVO_API_KEY` | `src/lib/brevo.ts` | Upserts every lead into the Brevo CRM (one list per form, `EVT_*` attributes per event). |
+
+`BREVO_API_KEY` is deliberately not set on preview deployments, so a test
+branch can never write into the live CRM.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
