@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendContactConfirmation, sendMail } from "@/lib/mail";
 import { syncToBrevo } from "@/lib/brevo";
+import { notifyBoard } from "@/lib/telegram";
 
 /** "" and null both mean "not answered"; keep them out of the CRM and emails. */
 function num(v: unknown): number | undefined {
@@ -64,6 +65,18 @@ export async function POST(req: Request) {
     // visitor their message was lost, since the notification already went out.
     await Promise.allSettled([
       sendContactConfirmation({ name, email, reason }),
+      notifyBoard({
+        name,
+        email,
+        reason,
+        message,
+        company,
+        sector,
+        employees,
+        frenchStaff,
+        revenue,
+        activity,
+      }).catch((e) => console.error("telegram error", e)),
       syncToBrevo({
         email,
         name,
