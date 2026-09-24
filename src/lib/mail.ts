@@ -483,3 +483,66 @@ export async function sendEnquiryFollowUp(opts: {
     bcc: JOURNEY_BCC ? [JOURNEY_BCC] : undefined,
   });
 }
+
+/**
+ * Sent a week after the welcome to members who never filled their profile.
+ * One ask, one button: the members page only works if people show up on it.
+ */
+export async function sendProfileReminder(opts: {
+  name: string;
+  email: string;
+}): Promise<void> {
+  const first = firstNameOf(opts.name);
+  const profile = profileUrl(SITE, opts.email);
+
+  const html = shell(
+    p(`Hi <strong>${first}</strong> 👋`) +
+      p(
+        "You joined La French Tech Phnom Penh last week, and your spot on the members page is still showing your initials.",
+      ) +
+      h2("👤", "One minute, and you are on the page") +
+      p(
+        "A photo and two lines about what you do. That is all. It is what makes the directory useful: people find each other by what they work on, not by a name in a list.",
+      ) +
+      button(profile, "Complete my profile") +
+      p(
+        `You can see who is already there at <a href="${SITE}/members" style="color:${BLEU};">${SITE}/members</a>.`,
+      ) +
+      p(
+        `<span style="font-size:13px;color:#8a8a99;">Not interested? Ignore this, we will not ask again. And if you would rather not be listed at all, reply and we will take you off.</span>`,
+      ) +
+      p("À bientôt,<br /><strong>La French Tech Phnom Penh</strong>"),
+  );
+
+  const text = [
+    `Hi ${first},`,
+    ``,
+    `You joined La French Tech Phnom Penh last week, and your spot on the`,
+    `members page is still showing your initials.`,
+    ``,
+    `ONE MINUTE, AND YOU ARE ON THE PAGE`,
+    ``,
+    `A photo and two lines about what you do. That is all. It is what makes the`,
+    `directory useful: people find each other by what they work on, not by a`,
+    `name in a list.`,
+    ``,
+    `   ${profile}`,
+    ``,
+    `You can see who is already there at ${SITE}/members`,
+    ``,
+    `Not interested? Ignore this, we will not ask again. And if you would rather`,
+    `not be listed at all, reply and we will take you off.`,
+    ``,
+    `A bientot,`,
+    `La French Tech Phnom Penh`,
+  ].join("\n");
+
+  await sendMailTo({
+    to: [opts.email],
+    replyTo: REPLY_TO,
+    subject: "Your French Tech profile is still empty",
+    text,
+    html,
+    bcc: JOURNEY_BCC ? [JOURNEY_BCC] : undefined,
+  });
+}
