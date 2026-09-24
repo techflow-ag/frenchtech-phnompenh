@@ -199,3 +199,44 @@ export async function syncToBrevo(lead: BrevoLead): Promise<void> {
     console.error("brevo sync error", e);
   }
 }
+
+export type BrevoContact = { email: string; attributes: Attributes };
+
+/** Every contact in the account, following pagination. */
+export async function listContacts(): Promise<BrevoContact[]> {
+  if (!KEY) throw new Error("BREVO_API_KEY is not set");
+  const out: BrevoContact[] = [];
+  const limit = 500;
+  for (let offset = 0; ; offset += limit) {
+    const res = await fetch(
+      `${API}/contacts?limit=${limit}&offset=${offset}`,
+      { headers: { "api-key": KEY, accept: "application/json" }, cache: "no-store" },
+    );
+    if (!res.ok) throw new Error(`Brevo list failed (${res.status})`);
+    const page = (await res.json()) as { contacts?: BrevoContact[] };
+    const rows = page.contacts ?? [];
+    out.push(...rows);
+    if (rows.length < limit) return out;
+  }
+}
+
+/** Writes attributes on an existing contact, leaving the others untouched. */
+export async function setAttributes(
+  email: string,
+  attributes: Attributes,
+): Promise<void> {
+  if (!KEY) throw new Error("BREVO_API_KEY is not set");
+  const res = await fetch(`${API}/contacts/${encodeURIComponent(email)}`, {
+    method: "PUT",
+    headers: { "api-key": KEY, "Content-Type": "application/json" },
+    body: JSON.stringify({ attributes }),
+  });
+  if (!res.ok) {
+    throw new Error(`Brevo update failed (${res.status}): ${await res.text()}`);
+  }
+}
+
+/** Today in Phnom Penh, exported so scheduled jobs agree with the CRM. */
+export function todayInPhnomPenh(): string {
+  return today();
+}
