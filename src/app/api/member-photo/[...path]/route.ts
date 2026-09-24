@@ -4,9 +4,13 @@ import { del, get } from "@vercel/blob";
  * Serves a member's profile photo out of the private blob store.
  *
  * The store is private, so photos cannot be linked directly. This route is the
- * only way in, and it only ever reaches into `members/`. Responses are
- * immutable: every upload gets a fresh random suffix, so a URL never changes
- * meaning and the CDN can hold it forever.
+ * only way in, and it only ever reaches into `members/`.
+ *
+ * Cached for an hour, not forever. Every upload gets a fresh random suffix so
+ * a URL never changes meaning, which would allow `immutable` — but a member
+ * asking to be taken off the site has to actually disappear, and a year-long
+ * CDN copy would outlive the delete. An hour matches the members page's own
+ * revalidation window, and these files are a few kilobytes each.
  */
 export async function GET(
   _req: Request,
@@ -27,7 +31,7 @@ export async function GET(
     return new Response(result.stream, {
       headers: {
         "Content-Type": result.blob.contentType || "application/octet-stream",
-        "Cache-Control": "public, max-age=31536000, immutable",
+        "Cache-Control": "public, max-age=3600, s-maxage=3600",
       },
     });
   } catch (e) {
