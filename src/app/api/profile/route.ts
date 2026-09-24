@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
+import { createHash } from "node:crypto";
 import { setAttributes } from "@/lib/brevo";
 import { verifyEmail } from "@/lib/profile-token";
 
@@ -61,14 +62,17 @@ export async function POST(req: Request) {
           { status: 503 },
         );
       }
-      // addRandomSuffix keeps a re-upload from being served from the CDN cache
-      // of the previous photo.
-      const blob = await put(`members/${email}`, photo, {
-        access: "public",
+      // The blob store is private, so the file is served back through
+      // /api/member-photo rather than a public bucket URL. The pathname is a
+      // hash, not the address, so a photo URL never leaks an email.
+      // addRandomSuffix stops a re-upload being served from the old CDN cache.
+      const slug = createHash("sha256").update(email).digest("hex").slice(0, 16);
+      const blob = await put(`members/${slug}`, photo, {
+        access: "private",
         addRandomSuffix: true,
         contentType: photo.type,
       });
-      attributes.PROFIL_PHOTO = blob.url;
+      attributes.PROFIL_PHOTO = `/api/member-photo/${blob.pathname}`;
     }
 
     if (Object.keys(attributes).length === 0) {
