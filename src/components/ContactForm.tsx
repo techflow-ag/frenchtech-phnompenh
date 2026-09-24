@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import Link from "next/link";
 import { Honeypot } from "./Honeypot";
 import {
   COMPANY_REASONS,
@@ -46,6 +47,7 @@ export function ContactForm() {
           employees: fd.get("employees"),
           frenchStaff: fd.get("french-staff"),
           revenue: fd.get("revenue"),
+          consent: fd.get("consent") === "on",
           sourceUrl: window.location.href,
         }),
       });
@@ -210,6 +212,23 @@ export function ContactForm() {
           className={fieldClass}
         />
       </div>
+
+      <label className="flex items-start gap-3 text-sm leading-relaxed text-ink-soft/80">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          className="mt-1 h-4 w-4 shrink-0 accent-rouge"
+        />
+        <span>
+          I agree to La French Tech Phnom Penh storing the details above to
+          answer my request, as described in the{" "}
+          <Link href="/privacy" className="text-bleu underline">
+            privacy notice
+          </Link>
+          .
+        </span>
+      </label>
 
       <button
         type="submit"

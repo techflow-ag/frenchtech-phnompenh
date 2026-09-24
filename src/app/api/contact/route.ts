@@ -21,6 +21,7 @@ export async function POST(req: Request) {
       company,
       activity,
       sector,
+      consent,
       sourceUrl,
     } = body;
     const employees = num(body.employees);
@@ -51,6 +52,7 @@ export async function POST(req: Request) {
         `Name: ${name}`,
         `Email: ${email}`,
         `Reason: ${reason || "—"}`,
+        `Consent given: ${consent ? "yes" : "no"}`,
         ...companyLines,
         ``,
         `Message:`,
@@ -70,6 +72,7 @@ export async function POST(req: Request) {
         company,
         activity,
         sector,
+        consent,
         employees,
         frenchStaff,
         revenue,

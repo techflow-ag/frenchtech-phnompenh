@@ -56,6 +56,8 @@ export type BrevoLead = {
   frenchStaff?: number;
   /** One of REVENUE_BANDS in contact-fields.ts. */
   revenue?: string;
+  /** Ticked the privacy checkbox. Stored in Brevo's built-in OPT_IN. */
+  consent?: boolean;
   /** Human-readable event labels, shown in the CRM. */
   events?: string[];
   /** Option ids from EventRegisterForm, used to tick the EVT_* booleans. */
@@ -120,6 +122,7 @@ export async function upsertContact(lead: BrevoLead): Promise<void> {
   if (lead.reason) attrs.MOTIF_CONTACT = lead.reason;
   if (lead.activity) attrs.ACTIVITE = lead.activity.slice(0, MAX_TEXT);
   if (lead.sector) attrs.SECTEUR = lead.sector;
+  if (lead.consent) attrs.OPT_IN = true;
   if (lead.revenue) attrs.CA_ANNUEL = lead.revenue;
   if (Number.isFinite(lead.employees)) attrs.NB_EMPLOYES = lead.employees!;
   if (Number.isFinite(lead.frenchStaff)) attrs.NB_FRANCAIS = lead.frenchStaff!;

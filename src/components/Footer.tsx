@@ -20,6 +20,7 @@ const columns = [
       { href: "/contact", label: "Become a member" },
       { href: "/partners#become-a-partner", label: "Become a partner" },
       { href: "/contact", label: "Contact" },
+      { href: "/privacy", label: "Privacy" },
     ],
   },
 ];

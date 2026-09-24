@@ -10,6 +10,12 @@ const TO = ["frenchtech.pp@gmail.com", "maximilien@techflow-agency.com"];
 /** Where a visitor's reply lands when they answer one of our emails. */
 const REPLY_TO = "frenchtech.pp@gmail.com";
 
+/**
+ * Optional address blind-copied on the member journey emails, so the board can
+ * watch exactly what goes out without it showing to the recipient.
+ */
+const JOURNEY_BCC = process.env.MEMBER_WELCOME_BCC;
+
 const SITE = "https://lafrenchtech-cambodge.com";
 const TELEGRAM = "https://t.me/+Pz-0dnwQT_k2MGQ1";
 const LOGO_URL = `${SITE}/images/logo.png`;
@@ -26,6 +32,7 @@ async function sendMailTo(opts: {
   text: string;
   html?: string;
   replyTo?: string;
+  bcc?: string[];
   /** Resend fetches `path` itself, so we never read from the filesystem. */
   attachments?: { filename: string; path: string }[];
 }): Promise<void> {
@@ -40,6 +47,7 @@ async function sendMailTo(opts: {
       from: FROM,
       to: opts.to,
       reply_to: opts.replyTo,
+      bcc: opts.bcc,
       subject: opts.subject,
       text: opts.text,
       html: opts.html,
@@ -372,6 +380,7 @@ export async function sendMembershipAccepted(opts: {
     subject: `Welcome to La French Tech Phnom Penh, ${first} 🎉`,
     text,
     html,
+    bcc: JOURNEY_BCC ? [JOURNEY_BCC] : undefined,
     attachments: [
       { filename: "la-french-tech-phnom-penh-logo.png", path: LOGO_URL },
     ],
@@ -467,5 +476,6 @@ export async function sendEnquiryFollowUp(opts: {
       : "About your startup submission — La French Tech Phnom Penh",
     text,
     html,
+    bcc: JOURNEY_BCC ? [JOURNEY_BCC] : undefined,
   });
 }
