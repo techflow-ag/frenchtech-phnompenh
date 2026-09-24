@@ -47,6 +47,15 @@ export type BrevoLead = {
   phone?: string;
   reason?: string;
   message?: string;
+  /** What the company does, free text. */
+  activity?: string;
+  /** One of SECTORS in contact-fields.ts. */
+  sector?: string;
+  employees?: number;
+  /** French nationals on the payroll, for French Tech Mission reporting. */
+  frenchStaff?: number;
+  /** One of REVENUE_BANDS in contact-fields.ts. */
+  revenue?: string;
   /** Human-readable event labels, shown in the CRM. */
   events?: string[];
   /** Option ids from EventRegisterForm, used to tick the EVT_* booleans. */
@@ -109,6 +118,11 @@ export async function upsertContact(lead: BrevoLead): Promise<void> {
   if (lead.profile) attrs.PROFIL = lead.profile;
   if (lead.phone) attrs.TELEPHONE = lead.phone;
   if (lead.reason) attrs.MOTIF_CONTACT = lead.reason;
+  if (lead.activity) attrs.ACTIVITE = lead.activity.slice(0, MAX_TEXT);
+  if (lead.sector) attrs.SECTEUR = lead.sector;
+  if (lead.revenue) attrs.CA_ANNUEL = lead.revenue;
+  if (Number.isFinite(lead.employees)) attrs.NB_EMPLOYES = lead.employees!;
+  if (Number.isFinite(lead.frenchStaff)) attrs.NB_FRANCAIS = lead.frenchStaff!;
   if (lead.sourceUrl) attrs.SOURCE_URL = lead.sourceUrl;
 
   // Which forms this person went through, most recent last.
