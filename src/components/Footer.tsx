@@ -9,7 +9,8 @@ const columns = [
     links: [
       { href: "/about", label: "About us" },
       { href: "/about#board", label: "The board" },
-      { href: "/community", label: "Members" },
+      { href: "/members", label: "Members" },
+      { href: "/community", label: "Community companies" },
       { href: "/partners", label: "Partners & sponsors" },
     ],
   },

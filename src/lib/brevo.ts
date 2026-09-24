@@ -205,15 +205,26 @@ export async function syncToBrevo(lead: BrevoLead): Promise<void> {
 
 export type BrevoContact = { email: string; attributes: Attributes };
 
-/** Every contact in the account, following pagination. */
-export async function listContacts(): Promise<BrevoContact[]> {
+/**
+ * Every contact in the account, following pagination.
+ *
+ * Scheduled jobs need the live list, but a public page rendering this on every
+ * request would hammer Brevo, so pages pass `revalidateSeconds`.
+ */
+export async function listContacts(
+  opts: { revalidateSeconds?: number } = {},
+): Promise<BrevoContact[]> {
   if (!KEY) throw new Error("BREVO_API_KEY is not set");
+  const caching =
+    opts.revalidateSeconds === undefined
+      ? { cache: "no-store" as const }
+      : { next: { revalidate: opts.revalidateSeconds } };
   const out: BrevoContact[] = [];
   const limit = 500;
   for (let offset = 0; ; offset += limit) {
     const res = await fetch(
       `${API}/contacts?limit=${limit}&offset=${offset}`,
-      { headers: { "api-key": KEY, accept: "application/json" }, cache: "no-store" },
+      { headers: { "api-key": KEY, accept: "application/json" }, ...caching },
     );
     if (!res.ok) throw new Error(`Brevo list failed (${res.status})`);
     const page = (await res.json()) as { contacts?: BrevoContact[] };

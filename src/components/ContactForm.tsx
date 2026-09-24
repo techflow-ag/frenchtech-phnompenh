@@ -117,14 +117,11 @@ export function ContactForm() {
 
       {showCompany && (
         <fieldset className="grid gap-5 border-t border-line pt-6">
-          <legend className="sr-only">Your company</legend>
-          <div>
-            <p className="display text-base text-ink">Your company</p>
-            <p className="mt-1 text-sm text-ink-soft/70">
-              Optional, and kept internal. It helps us understand the ecosystem
-              and report on it to the French Tech Mission.
-            </p>
-          </div>
+          <legend className="display text-base text-ink">Your company</legend>
+          <p className="text-sm text-ink-soft/70">
+            Optional, and kept internal. It helps us understand the ecosystem
+            and report on it to the French Tech Mission.
+          </p>
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div>

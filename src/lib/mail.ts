@@ -1,4 +1,6 @@
 // Server-only email helpers (Resend). Never import in client components.
+import { profileUrl } from "@/lib/profile-token";
+
 const API = "https://api.resend.com";
 const KEY = process.env.RESEND_API_KEY;
 const AUDIENCE = process.env.RESEND_AUDIENCE_ID;
@@ -292,6 +294,8 @@ export async function sendMembershipAccepted(opts: {
   email: string;
 }): Promise<void> {
   const first = firstNameOf(opts.name);
+  // Personal, signed link: it is what proves the profile belongs to them.
+  const profile = profileUrl(SITE, opts.email);
 
   const html = shell(
     p(`Hi <strong>${first}</strong> 🎉`) +
@@ -308,7 +312,7 @@ export async function sendMembershipAccepted(opts: {
       p(
         "Add a photo, your LinkedIn and a couple of lines about yourself, so the rest of the community knows who you are. Takes a minute, and it is what puts you on our members page.",
       ) +
-      button(`${SITE}/profile`, "Complete my profile") +
+      button(profile, "Complete my profile") +
       h2("🏷️", "Use the logo") +
       p(
         "As a member you are welcome to display the La French Tech Phnom Penh logo on your website, your deck and your communication material. It is attached to this email, ready to use.",
@@ -346,7 +350,7 @@ export async function sendMembershipAccepted(opts: {
     `Add a photo, your LinkedIn and a couple of lines about yourself. Takes a`,
     `minute, and it is what puts you on our members page.`,
     ``,
-    `   ${SITE}/profile`,
+    `   ${profile}`,
     ``,
     `3. USE THE LOGO`,
     ``,
