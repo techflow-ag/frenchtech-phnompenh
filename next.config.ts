@@ -4,6 +4,13 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Make the apex the canonical/primary domain: www -> apex.
+      // The member welcome emails already link to /members; the directory now
+      // lives on the community page.
+      {
+        source: "/members",
+        destination: "/community#members",
+        permanent: true,
+      },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.lafrenchtech-cambodge.com" }],

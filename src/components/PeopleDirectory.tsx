@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import type { DirectoryMember } from "@/lib/members";
+import type { DirectoryPerson } from "@/lib/members";
 
 function initials(name: string): string {
   return name
@@ -14,20 +14,20 @@ function initials(name: string): string {
     .toUpperCase();
 }
 
-export function MembersDirectory({ members }: { members: DirectoryMember[] }) {
+export function PeopleDirectory({ people }: { people: DirectoryPerson[] }) {
   const [query, setQuery] = useState("");
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return members;
-    return members.filter((m) =>
+    if (!q) return people;
+    return people.filter((m) =>
       [m.name, m.company, m.role, m.bio]
         .filter(Boolean)
         .join(" ")
         .toLowerCase()
         .includes(q),
     );
-  }, [members, query]);
+  }, [people, query]);
 
   return (
     <>

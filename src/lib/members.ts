@@ -1,7 +1,7 @@
 import { listContacts } from "@/lib/brevo";
 import { getBoardMembers } from "@/lib/board";
 
-export type DirectoryMember = {
+export type DirectoryPerson = {
   name: string;
   /** Board members are pinned above the rest and badged. */
   isBoard: boolean;
@@ -22,11 +22,11 @@ function key(name: string): string {
  * from the CRM. Board entries win on a name clash, since they carry a photo
  * and a role the CRM does not have.
  */
-export async function getDirectoryMembers(
+export async function getDirectoryPeople(
   revalidateSeconds = 3600,
-): Promise<DirectoryMember[]> {
+): Promise<DirectoryPerson[]> {
   const board = await getBoardMembers();
-  const out: DirectoryMember[] = board.map((m) => ({
+  const out: DirectoryPerson[] = board.map((m) => ({
     name: m.name,
     isBoard: true,
     role: m.role,
@@ -43,7 +43,7 @@ export async function getDirectoryMembers(
     return out;
   }
 
-  const members: DirectoryMember[] = [];
+  const people: DirectoryPerson[] = [];
   for (const c of contacts) {
     const a = c.attributes;
     if (String(a.MOTIF_CONTACT ?? "") !== "Join as a member") continue;
@@ -52,7 +52,7 @@ export async function getDirectoryMembers(
     if (!name || seen.has(key(name))) continue;
     seen.add(key(name));
 
-    members.push({
+    people.push({
       name,
       isBoard: false,
       company: String(a.ENTREPRISE ?? "") || undefined,
@@ -61,6 +61,6 @@ export async function getDirectoryMembers(
     });
   }
 
-  members.sort((a, b) => a.name.localeCompare(b.name));
-  return [...out, ...members];
+  people.sort((a, b) => a.name.localeCompare(b.name));
+  return [...out, ...people];
 }

@@ -325,7 +325,7 @@ export async function sendMembershipAccepted(opts: {
         "If you fancy helping out, hosting something or speaking, just reply to this email. There is always room, and we are all volunteers here.",
       ) +
       p(
-        `<span style="font-size:13px;color:#8a8a99;">You will also appear on our public members page at <a href="${SITE}/members" style="color:${BLEU};">${SITE}/members</a>, with your name and company. Would rather not be listed? Reply and we will take you off, no questions asked.</span>`,
+        `<span style="font-size:13px;color:#8a8a99;">You will also appear on our public members page at <a href="${SITE}/community#members" style="color:${BLEU};">${SITE}/community#members</a>, with your name and company. Would rather not be listed? Reply and we will take you off, no questions asked.</span>`,
       ) +
       p("À bientôt,<br /><strong>La French Tech Phnom Penh</strong>"),
   );
@@ -370,7 +370,7 @@ export async function sendMembershipAccepted(opts: {
     ``,
     `--`,
     ``,
-    `You will also appear on our public members page at ${SITE}/members, with`,
+    `You will also appear on our public members page at ${SITE}/community#members, with`,
     `your name and company. Would rather not be listed? Reply and we will take`,
     `you off, no questions asked.`,
     ``,
@@ -506,7 +506,7 @@ export async function sendProfileReminder(opts: {
       ) +
       button(profile, "Complete my profile") +
       p(
-        `You can see who is already there at <a href="${SITE}/members" style="color:${BLEU};">${SITE}/members</a>.`,
+        `You can see who is already there at <a href="${SITE}/community#members" style="color:${BLEU};">${SITE}/community#members</a>.`,
       ) +
       p(
         `<span style="font-size:13px;color:#8a8a99;">Not interested? Ignore this, we will not ask again. And if you would rather not be listed at all, reply and we will take you off.</span>`,
@@ -528,7 +528,7 @@ export async function sendProfileReminder(opts: {
     ``,
     `   ${profile}`,
     ``,
-    `You can see who is already there at ${SITE}/members`,
+    `You can see who is already there at ${SITE}/community#members`,
     ``,
     `Not interested? Ignore this, we will not ask again. And if you would rather`,
     `not be listed at all, reply and we will take you off.`,
