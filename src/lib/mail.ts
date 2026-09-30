@@ -7,10 +7,18 @@ const AUDIENCE = process.env.RESEND_AUDIENCE_ID;
 
 // From address must be on a Resend-verified domain (lafrenchtech-cambodge.com).
 const FROM = "La French Tech Phnom Penh <noreply@lafrenchtech-cambodge.com>";
-const TO = ["frenchtech.pp@gmail.com", "maximilien@techflow-agency.com"];
+const FRENCH_TECH_INBOX = "frenchtech.pp@gmail.com";
+const TO = [FRENCH_TECH_INBOX, "maximilien@techflow-agency.com"];
+
+/**
+ * Notifications that go to the association inbox alone. Event registrations
+ * are fully handled by the CRM, so copying a personal inbox on every one of
+ * them is noise.
+ */
+export const ASSOCIATION_ONLY = [FRENCH_TECH_INBOX];
 
 /** Where a visitor's reply lands when they answer one of our emails. */
-const REPLY_TO = "frenchtech.pp@gmail.com";
+const REPLY_TO = FRENCH_TECH_INBOX;
 
 /**
  * Optional address blind-copied on the member journey emails, so the board can
@@ -66,8 +74,10 @@ export async function sendMail(opts: {
   subject: string;
   text: string;
   replyTo?: string;
+  /** Defaults to both board inboxes; pass ASSOCIATION_ONLY to narrow it. */
+  to?: string[];
 }): Promise<void> {
-  await sendMailTo({ to: TO, ...opts });
+  await sendMailTo({ ...opts, to: opts.to ?? TO });
 }
 
 export async function addToAudience(opts: {

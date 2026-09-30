@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendMail } from "@/lib/mail";
+import { ASSOCIATION_ONLY, sendMail } from "@/lib/mail";
 import { syncToBrevo } from "@/lib/brevo";
 
 export async function POST(req: Request) {
@@ -11,6 +11,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
     await sendMail({
+      to: ASSOCIATION_ONLY,
       subject: `[Event registration] ${name}${company ? ` — ${company}` : ""}`,
       replyTo: email,
       text: [
